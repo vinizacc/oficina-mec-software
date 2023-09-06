@@ -14,7 +14,7 @@ namespace Servico1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAcessoVendas());
+            Application.Run(new Login());
         }
     }
 }
