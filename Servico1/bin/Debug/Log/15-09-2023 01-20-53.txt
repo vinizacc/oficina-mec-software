@@ -1,0 +1,31 @@
+Log do arquivo - 15-09-2023 01-20-53
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 01-20-53
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão CONTROLE CLIENTES foi clicado.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+Botão TODOS clicado.
+Selecionou o cliente: lll
+Selecionou o cliente: 1
+Botão OCULTAR foi clicado.
+Cliente para ocultação: 1
+Deletou o cliente.
+Selecionou o cliente: ray
+Selecionou o cliente: ray
+Selecionou o cliente: 1

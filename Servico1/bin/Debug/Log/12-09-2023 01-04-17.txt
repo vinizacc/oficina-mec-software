@@ -1,0 +1,36 @@
+Log do arquivo - 12-09-2023 01-04-17
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 12-09-2023 01-04-17
+O botão login foi clicado.
+O login foi validado.
+LOGIN: adm|| SENHA: 1234
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Botão USUÁRIOS clicado.
+
+----------------------------------
+O formulário Usuários foi aberto.
+----------------------------------
+
+Clicou em uma célula - Usuário: 19
+Clicou em uma célula - Usuário: 19
+Clicou em uma célula - Usuário: adm
+Clicou em uma célula - Usuário: adm
+Clicou em uma célula - Usuário: adm
+Clicou em uma célula - Usuário: adm
+Botão REGISTRO foi clicado.
+
+----------------------------------
+O formulário Registro foi aberto.
+----------------------------------
+
+Registrar: nenhum campo foi preenchido.
+
+----------------------------------

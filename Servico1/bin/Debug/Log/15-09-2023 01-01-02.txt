@@ -1,0 +1,172 @@
+Log do arquivo - 15-09-2023 01-01-02
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 01-01-02
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botao SALVAR foi clicado.
+Atualizou o pdf.
+Atualizou o pdf.
+Botao SALVAR foi clicado.
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Botão FECHAR clicado.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-15 01:01:10
+O botão Notas vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+O botão Notas vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão CLIENTE DEVEDOR clicado.
+
+----------------------------------
+Abrindo o formulário Cliente devedor
+----------------------------------
+
+Privilégio adm
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 50 ARQ: Arquivo da nota: 15-09-2023_00-37-20
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Foi clicado duas vezes em uma célula da lista.
+Botão ABRIR clicado.
+O caminho para o arquivo da venda: ./Pdf/15-09-2023_01-01-05.pdf
+Botão ABRIR clicado.
+O caminho para o arquivo da venda: ./Pdf/15-09-2023_01-01-05.pdf
+Botão PROCURAR foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 30 ARQ: Arquivo da nota: 18-07-2023_11-37-49
+Uma celula da lista foi clicada. ID SERVIÇO: 23 ARQ: Arquivo da nota: 10-07-2023_19-00-42
+Foi clicado duas vezes em uma célula da lista.
+Botão ABRIR clicado.
+O caminho para o arquivo da venda: ./Pdf/10-07-2023_19-00-42.pdf
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+
+----------------------------------
+
+O botão Acesso vendas foi clicado. 
+ O formulário vai ser aberto.
+Botão TODOS clicado.
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 07-07-2023_16-11-39
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 07-07-2023_16-11-39
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 22-04-2023_20-26-11
+Botão ABRIR clicado.
+Id do serviço selecionado: 3
+Botão ABRIR clicado.
+Id do serviço selecionado: 3
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 22-04-2023_20-26-11
+Botão ABRIR clicado.
+Id do serviço selecionado: 9
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-09-2023_00-05-29
+Botão ABRIR clicado.
+Id do serviço selecionado: 40
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 12-09-2023_13-22-53
+Botão ABRIR clicado.
+Id do serviço selecionado: 36
+Botão TODOS clicado.
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 07-07-2023_16-11-39
+
+----------------------------------
+
+Botão CONTROLE CLIENTES foi clicado.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+Botão TODOS clicado.
+Selecionou o cliente: suruba da boa
+Selecionou o cliente: Terry
+Selecionou o cliente: suruba da boa
+Selecionou o cliente: 1
+Selecionou o cliente: tester
+Selecionou o cliente: ray
+Botão EXCLUIR foi clicado.
+Cliente para exclusão: ray
+----------EXCEÇÃO----------
+EXCEÇÃO: Cannot delete or update a parent row: a foreign key constraint fails (`mydb`.`ordem_servico`, CONSTRAINT `ordem_servico_ibfk_1` FOREIGN KEY (`ID_CLIENTE`) REFERENCES `pessoa_fisica` (`ID_PF`))
+MÉTODO QUE GEROU A EXCEÇÃO: MySql.Data.MySqlClient.MySqlPacket ReadPacket()
+DATA/HORA DA EXCEÇÃO: 01:04:29 15-09-23
+TRILHA DA EXCEÇÃO:    em MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   em MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   em MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   em MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   em MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   em MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   em Servico1.ClientesDAO.deleteCliente(String id) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\ClientesDAO.cs:linha 553
+   em Servico1.FormClientes.btnExcluirCliente_Click(Object sender, EventArgs e) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\FormClientes.cs:linha 291
+   em System.Windows.Forms.Control.OnClick(EventArgs e)
+   em System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   em System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   em System.Windows.Forms.Control.WndProc(Message& m)
+   em System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   em System.Windows.Forms.Button.WndProc(Message& m)
+   em System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   em System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   em System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   em Servico1.Servico.controleDeClientesToolStripMenuItem_Click(Object sender, EventArgs e) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\Index.cs:linha 112
+   em System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   em System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   em System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   em System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   em System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   em System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   em System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   em System.Windows.Forms.Control.WndProc(Message& m)
+   em System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   em System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   em System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   em System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   em System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   em Servico1.Program.Main() na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\Program.cs:linha 17
+---------------------------

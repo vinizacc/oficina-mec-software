@@ -1,0 +1,31 @@
+Log do arquivo - 14-09-2023 17-21-09
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 14-09-2023 17-21-09
+O botão login foi clicado.
+O login foi validado.
+LOGIN: adm|| SENHA: 1234
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: tester
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão comboBox quantidade foi clicado: 1
+Botao SALVAR foi clicado.
+Atualizou o pdf.

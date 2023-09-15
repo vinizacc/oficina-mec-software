@@ -35,7 +35,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblNomeArq = new System.Windows.Forms.Label();
             this.btnPagou = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnTodos = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             this.txtProcuraNome = new System.Windows.Forms.TextBox();
             this.lblDatas = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTipoPag = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
             this.dataGridViewServicos = new System.Windows.Forms.DataGridView();
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -63,7 +63,7 @@
             this.groupBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox3.Controls.Add(this.lblNomeArq);
             this.groupBox3.Controls.Add(this.btnPagou);
-            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.lblNome);
             this.groupBox3.Controls.Add(this.btnTodos);
             this.groupBox3.Controls.Add(this.btnProcurar);
             this.groupBox3.Controls.Add(this.label1);
@@ -71,12 +71,13 @@
             this.groupBox3.Controls.Add(this.txtProcuraNome);
             this.groupBox3.Controls.Add(this.lblDatas);
             this.groupBox3.Controls.Add(this.dateTimePicker);
-            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.lblTipoPag);
             this.groupBox3.Controls.Add(this.comboBox);
-            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblData);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // lblNomeArq
             // 
@@ -91,10 +92,10 @@
             this.btnPagou.UseVisualStyleBackColor = false;
             this.btnPagou.Click += new System.EventHandler(this.btnPagou_Click);
             // 
-            // label2
+            // lblNome
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblNome, "lblNome");
+            this.lblNome.Name = "lblNome";
             // 
             // btnTodos
             // 
@@ -141,10 +142,10 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dateTimePicker_MouseDown);
             // 
-            // label3
+            // lblTipoPag
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.lblTipoPag, "lblTipoPag");
+            this.lblTipoPag.Name = "lblTipoPag";
             // 
             // comboBox
             // 
@@ -152,10 +153,10 @@
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Name = "comboBox";
             // 
-            // label4
+            // lblData
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.lblData, "lblData");
+            this.lblData.Name = "lblData";
             // 
             // dataGridViewServicos
             // 
@@ -276,10 +277,10 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblTipoPag;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtProcuraNome;
         private System.Windows.Forms.Button btnTodos;

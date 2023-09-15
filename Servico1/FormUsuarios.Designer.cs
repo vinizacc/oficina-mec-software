@@ -71,6 +71,7 @@
             resources.ApplyResources(this.groupBoxUsuario, "groupBoxUsuario");
             this.groupBoxUsuario.Name = "groupBoxUsuario";
             this.groupBoxUsuario.TabStop = false;
+            this.groupBoxUsuario.Enter += new System.EventHandler(this.groupBoxUsuario_Enter);
             // 
             // label1
             // 

@@ -1,0 +1,57 @@
+Log do arquivo - 15-09-2023 14-39-16
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 14-39-16
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Botão CADASTRO CLIENTE foi clicado.
+
+----------------------------------
+O formulário Cadastro de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão CONTROLE CLIENTES foi clicado.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão CLIENTE DEVEDOR clicado.
+
+----------------------------------
+Abrindo o formulário Cliente devedor
+----------------------------------
+
+Privilégio adm
+
+----------------------------------

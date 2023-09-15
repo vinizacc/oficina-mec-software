@@ -1,0 +1,114 @@
+Log do arquivo - 15-09-2023 02-00-43
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 02-00-43
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão CLIENTE DEVEDOR clicado.
+
+----------------------------------
+Abrindo o formulário Cliente devedor
+----------------------------------
+
+Privilégio adm
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Botão SELEÇÃO POR DATA clicado.
+O formulário por datas será aberto.
+
+----------------------------------
+Abrindo Form Seleção de DATA
+----------------------------------
+
+
+----------------------------------
+
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 50 ARQ: Arquivo da nota: 15-09-2023_00-37-20
+Uma celula da lista foi clicada. ID SERVIÇO: 49 ARQ: Arquivo da nota: 15-09-2023_00-29-05
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: a
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: ray
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: ray
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: ray Tipo: 
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: ray
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: tester
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: tester Tipo: 
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: tester Tipo: 
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: tester Tipo: 
+Botão PROCURAR foi clicado.
+Pesquisa pelo nome: Terry
+Uma celula da lista foi clicada. ID SERVIÇO: 31 ARQ: Arquivo da nota: 18-07-2023_11-47-10
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: Terry Tipo: 
+Uma celula da lista foi clicada. ID SERVIÇO: 31 ARQ: Arquivo da nota: 18-07-2023_11-47-10
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: Terry Tipo: 
+Botão PROCURAR foi clicado.
+Busca por nome e tipo de pagamento. Nome: Terry Tipo: 
+Botão SELEÇÃO POR DATA clicado.
+O formulário por datas será aberto.
+
+----------------------------------
+Abrindo Form Seleção de DATA
+----------------------------------
+
+
+----------------------------------
+
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Botão TODOS foi clicado.
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Botão SELEÇÃO POR DATA clicado.
+O formulário por datas será aberto.
+
+----------------------------------
+Abrindo Form Seleção de DATA
+----------------------------------
+
+DATA INICIAL: 03/09/2023 02:03:33
+
+----------------------------------
+
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+Uma celula da lista foi clicada. ID SERVIÇO: 34 ARQ: Arquivo da nota: 11-09-2023_18-35-20
+Botão SELEÇÃO POR DATA clicado.
+O formulário por datas será aberto.
+
+----------------------------------
+Abrindo Form Seleção de DATA
+----------------------------------
+
+DATA INICIAL: 15/01/2023 02:03:40
+DATA INICIAL: 04/01/2023 02:03:40
+
+----------------------------------
+
+Uma celula da lista foi clicada. ID SERVIÇO: 51 ARQ: Arquivo da nota: 15-09-2023_01-01-05
+
+----------------------------------

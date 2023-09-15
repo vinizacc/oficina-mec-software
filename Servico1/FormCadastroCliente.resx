@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblDoc.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Segoe UI, 10.2pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblDoc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -133,7 +133,7 @@
     <value>478, 38</value>
   </data>
   <data name="lblDoc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 25</value>
+    <value>185, 23</value>
   </data>
   <data name="lblDoc.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -205,7 +205,7 @@
     <value>True</value>
   </data>
   <data name="lblTel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Segoe UI, 10.2pt</value>
   </data>
   <data name="lblTel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -214,7 +214,7 @@
     <value>248, 38</value>
   </data>
   <data name="lblTel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 25</value>
+    <value>73, 23</value>
   </data>
   <data name="lblTel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -238,7 +238,7 @@
     <value>True</value>
   </data>
   <data name="lblEndereco.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Segoe UI, 10.2pt</value>
   </data>
   <data name="lblEndereco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -247,7 +247,7 @@
     <value>15, 121</value>
   </data>
   <data name="lblEndereco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 25</value>
+    <value>81, 23</value>
   </data>
   <data name="lblEndereco.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -319,7 +319,7 @@
     <value>True</value>
   </data>
   <data name="lblNome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Segoe UI, 10.2pt</value>
   </data>
   <data name="lblNome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -328,7 +328,7 @@
     <value>15, 38</value>
   </data>
   <data name="lblNome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 25</value>
+    <value>57, 23</value>
   </data>
   <data name="lblNome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -352,16 +352,16 @@
     <value>True</value>
   </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16.2pt</value>
+    <value>Segoe UI, 13.8pt</value>
   </data>
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, -3</value>
+    <value>259, -3</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 32</value>
+    <value>218, 31</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -385,7 +385,7 @@
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Segoe UI, 10.2pt</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -394,7 +394,7 @@
     <value>248, 121</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 25</value>
+    <value>163, 23</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -469,16 +469,16 @@
     <value>1</value>
   </data>
   <data name="labelCadastrar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 13.8pt</value>
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="labelCadastrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelCadastrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 229</value>
+    <value>299, 238</value>
   </data>
   <data name="labelCadastrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 55</value>
+    <value>138, 41</value>
   </data>
   <data name="labelCadastrar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>

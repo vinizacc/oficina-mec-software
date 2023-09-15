@@ -1,0 +1,64 @@
+Log do arquivo - 15-09-2023 00-27-12
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 00-27-12
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botao SALVAR foi clicado.
+Atualizou o pdf.
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Botao SALVAR foi clicado.
+Atualizou o pdf.
+Atualizou o pdf.
+Erro na impressão: 
+CONSTRAINT `ordem_servico.LISTA_DADOS` failed for `mydb`.`ordem_servico`
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botao SALVAR foi clicado.
+Atualizou o pdf.
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Botão comboBox selecionar tipo de pagamento foi clicado: Dinheiro
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-15 00:29:14

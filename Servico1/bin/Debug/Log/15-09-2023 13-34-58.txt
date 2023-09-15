@@ -1,0 +1,110 @@
+Log do arquivo - 15-09-2023 13-34-58
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 13-34-58
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+O botão Acesso vendas foi clicado. 
+ O formulário vai ser aberto.
+Botão TODOS clicado.
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 11-09-2023_19-33-17
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 11-09-2023_19-33-17
+Botão PROCURAR clicado.
+Busca por nome: Terry
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-07-36
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-07-36
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-47-10
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 11-09-2023_18-35-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 12-09-2023_14-39-25
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-29-05
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-37-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_01-01-05
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-08-59
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-06-01
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Botão PROCURAR clicado.
+Busca por nome: tester
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 23-04-2023_20-55-50
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 23-04-2023_20-55-50
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 23-04-2023_22-36-04
+Botão SELECIONAR DATA clicado.
+
+----------------------------------
+Abrindo Form Seleção de DATA
+----------------------------------
+
+
+----------------------------------
+
+Datas - Data inicial: 15/09/2023 13:38:03 - Data final: 15/09/2023 13:38:03
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-37-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-10-09
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-08-59
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-06-01
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_01-01-05
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-37-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-29-05
+Botão PROCURAR clicado.
+Busca por nome: tester
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 23-04-2023_20-55-50
+Botão PROCURAR clicado.
+Busca por nome: terry
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-07-36
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-47-10
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 11-09-2023_18-35-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 12-09-2023_14-39-25
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-29-05
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_00-37-20
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_01-01-05
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-06-01
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-08-59
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Botão PROCURAR clicado.
+Procura por nome: terry Tipo pagamento: 
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 14-07-2023_11-08-46
+Botão PROCURAR clicado.
+Procura por nome: terry Tipo pagamento: 
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-07-36
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 18-07-2023_11-07-36
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 15-09-2023_02-11-09
+Botão PROCURAR clicado.
+Procura por nome: terry Tipo pagamento: 
+Botão TODOS clicado.
+Selecionou uma celula da tabela do arquivo: Arquivo da nota: 11-09-2023_19-33-17
+
+----------------------------------
+
+Botão CADASTRO CLIENTE foi clicado.
+
+----------------------------------
+O formulário Cadastro de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.

@@ -287,6 +287,12 @@
     <Compile Include="FormData.Designer.cs">
       <DependentUpon>FormData.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDeletar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeletar.Designer.cs">
+      <DependentUpon>FormDeletar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDevedorCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,12 @@
     </Compile>
     <Compile Include="FormDoc.Designer.cs">
       <DependentUpon>FormDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotas.designer.cs">
+      <DependentUpon>FormNotas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPDV.cs">
       <SubType>Form</SubType>
@@ -331,6 +343,7 @@
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
     <Compile Include="Items.cs" />
+    <Compile Include="ListaItem.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -383,8 +396,14 @@
     <EmbeddedResource Include="FormData.resx">
       <DependentUpon>FormData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDeletar.resx">
+      <DependentUpon>FormDeletar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDevedorCliente.resx">
       <DependentUpon>FormDevedorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotas.resx">
+      <DependentUpon>FormNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPDV.resx">
       <DependentUpon>FormPDV.cs</DependentUpon>

@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Braga.exe" size="1524720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Braga.exe" size="1554928">
       <assemblyIdentity name="Braga" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BDc5ZwSo2PHdU05I5YrAYgRA6qp/LDasbuHWxn4Fo40=</dsig:DigestValue>
+        <dsig:DigestValue>B9Dnwww5h435hP7OBB+EcXjjpfNXVu79S1waO8n1M0I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

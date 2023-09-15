@@ -1,4 +1,5 @@
 ﻿using Braga;
+using DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace Servico1
         ClientesDAO c = new ClientesDAO();
         List<Clientes> cliente = new List<Clientes>();
         FolderControl folder = new FolderControl();
+        List<ListaItem> lI = new List<ListaItem>();
 
         string filePathAndName;
         bool registrado = false;
@@ -36,51 +38,53 @@ namespace Servico1
         bool primeiraVezClickando = true;
         string dataDoArquivo;
         int numeroNota;
-        private static int cortador = 0;
+        private int contaVezesFinalizou = 0;
         bool bandeiraParaBD = false;
 
         public Log log = new Log();
         public string caminhoENomeLog;
-
         int registraUmavez = 1;
+        private bool tentativaFinalizar;
 
         public event EventHandler MudarCorTextBox;
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
-            {
-                this.Close();
-                log.registrar("Botão ESC foi clicado.");
-                return true;
-            }
-            if (keyData == Keys.F2)
-            {
-                FormAlteraPropriedades alteraProp = new FormAlteraPropriedades();
-                log.registrar("Botão F2 (ALTERAR PROPRIEDADES) foi clicado.");
-                alteraProp.Show();
-            }
-            if (keyData == Keys.F3)
-            {
-                log.registrar("Botão F3 (FECHAR) foi clicado.");
-                this.Close();
-            }
-            if (keyData == Keys.F8)
-            {
-                EventArgs e = new EventArgs();
-                picBoxSalvar.Invoke(new EventHandler(picBoxSalvar_Click), picBoxSalvar, e);
-                log.registrar("Botão F3 (SALVAR) foi clicado.");
-            }
-            if (keyData == Keys.F12)
-            {
-                EventArgs e = new EventArgs();
-                log.registrar("Botão F12 (FINALIZAR) foi clicado.");
-                picBoxFinalizar.Invoke(new EventHandler(picBoxFinalizar_Click), picBoxFinalizar, e);
-            }
-            return base.ProcessDialogKey(keyData);
-        }
+        
+        //protected override bool ProcessDialogKey(Keys keyData)
+        //{
+        //    if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+        //    {
+        //        this.Close();
+        //        log.registrar("Botão ESC foi clicado.");
+        //        return true;
+        //    }
+        //    if (keyData == Keys.F2)
+        //    {
+        //        FormAlteraPropriedades alteraProp = new FormAlteraPropriedades();
+        //        log.registrar("Botão F2 (ALTERAR PROPRIEDADES) foi clicado.");
+        //        alteraProp.Show();
+        //    }
+        //    if (keyData == Keys.F3)
+        //    {
+        //        log.registrar("Botão F3 (FECHAR) foi clicado.");
+        //        this.Close();
+        //    }
+        //    if (keyData == Keys.F8)
+        //    {
+        //        EventArgs e = new EventArgs();
+        //        picBoxSalvar.Invoke(new EventHandler(picBoxSalvar_Click), picBoxSalvar, e);
+        //        log.registrar("Botão F3 (SALVAR) foi clicado.");
+        //    }
+        //    if (keyData == Keys.F12)
+        //    {
+        //        EventArgs e = new EventArgs();
+        //        log.registrar("Botão F12 (FINALIZAR) foi clicado.");
+        //        picBoxFinalizar.Invoke(new EventHandler(picBoxFinalizar_Click), picBoxFinalizar, e);
+        //    }
+        //    return base.ProcessDialogKey(keyData);
+        ////}
 
         private void FormPDV_Load(object sender, EventArgs e)
         {
+            numeric.Minimum = 1;
             log.caminhoENome = caminhoENomeLog;
             log.registrar(log.barra + "O formulário PDV foi aberto" + log.barra);
             configuraçõesIniciais();
@@ -108,6 +112,7 @@ namespace Servico1
             kmBase = of.VALOR_KM;
 
             primeiraDivisao();
+            
             segundaDivisao();
             controleCheckBox();
 
@@ -159,6 +164,22 @@ namespace Servico1
             iniciandoPdf();
         }
 
+        private void colocaItensGBItem()
+        {
+            groupBoxItem.Controls.Add(lblItem);
+            groupBoxItem.Controls.Add(txtBoxItem);
+            groupBoxItem.Controls.Add(lblValor);
+            groupBoxItem.Controls.Add(txtBoxValor);
+            groupBoxItem.Controls.Add(lblQt);
+            groupBoxItem.Controls.Add(comboBoxQt);
+            groupBoxItem.Controls.Add(lblDesc);
+            groupBoxItem.Controls.Add(txtBoxDesc);
+            groupBoxItem.Controls.Add(label10);
+            groupBoxItem.Controls.Add(comboBoxTipo);
+            groupBoxItem.Controls.Add(label8);
+            groupBoxItem.Controls.Add(txtBoxValorPago);
+        }
+
         public void segundaDivisao()
         {
             groupBox1.Height = (this.Height - pictureBox1.Height + 7);
@@ -171,43 +192,59 @@ namespace Servico1
 
             tabControl1.Parent = groupBox1;
             tabControl1.Location = new System.Drawing.Point((groupBox1.Width / 2) - (tabControl1.Width / 2) , label7.Location.Y + label7.Height + 5);
-            tabControl1.Height = groupBox1.Height - label7.Height - picBoxFinalizar.Height - lblFinalizar.Height - 50;
+            //tabControl1.Height = groupBox1.Height - label7.Height - picBoxFinalizar.Height - lblFinalizar.Height - 50;
 
             //------------------------------TABPAGE1
-            int alturaLblAnuncio = txtBoxNome.Height + txtBoxTelefone.Height + txtBoxDoc.Height + txtBoxEnd.Height + 55;
+            int alturaLblAnuncio = txtBoxNome.Height + txtBoxTel.Height + txtBoxDoc.Height + txtBoxEnd.Height + 55;
 
-            label2.Parent = tabPage1;
-            label2.Location = new System.Drawing.Point(lblAnuncio.Location.X ,20);
-            txtBoxNome.Parent = tabPage1;
-            txtBoxNome.Location = new System.Drawing.Point(label2.Location.X + label2.Width, label2.Location.Y - (label2.Height / 4));
+            groupBoxCliente.Controls.Add(lblNome);
+            groupBoxCliente.Controls.Add(txtBoxNome);
+            groupBoxCliente.Controls.Add(lblTel);
+            groupBoxCliente.Controls.Add(txtBoxTel);
+            groupBoxCliente.Controls.Add(lblDoc);
+            groupBoxCliente.Controls.Add(txtBoxDoc);
+            groupBoxCliente.Controls.Add(lblEnd);
+            groupBoxCliente.Controls.Add(txtBoxEnd);
+            groupBoxCliente.Controls.Add(lblAnuncio);
 
-            label3.Parent = tabPage1;
-            label3.Location = new System.Drawing.Point(lblAnuncio.Location.X, label2.Location.Y + label2.Height  + 16);
-            txtBoxTelefone.Parent = tabPage1;
-            txtBoxTelefone.Location = new System.Drawing.Point(label3.Location.X + label3.Width, label3.Location.Y - (label3.Height / 4));
+            int lblNomeX = Convert.ToInt16(groupBoxCliente.Width * 0.15);
+            int lblNomeY = Convert.ToInt16(groupBoxCliente.Height * 0.05);
+            
+            lblNome.Location = new Point(lblNomeX, lblNomeY);
+            txtBoxNome.Location = new Point(lblNomeX + lblNome.Width, lblNomeY);
+            lblTel.Location = new Point(lblNomeX, lblNomeY+ lblTel.Height + 16);
+            txtBoxTel.Location = new Point(lblNomeX + lblTel.Width, lblTel.Location.Y);
+            lblDoc.Location = new Point(lblNomeX, lblTel.Location.Y + lblDoc.Height + 16);
+            txtBoxDoc.Location = new Point(lblNomeX + lblDoc.Width, lblDoc.Location.Y);
+            lblEnd.Location = new Point(lblNomeX, lblDoc.Location.Y + lblEnd.Height + 16);
+            txtBoxEnd.Location = new Point(lblNomeX + lblEnd.Width, lblEnd.Location.Y);
 
-            label4.Parent = tabPage1;
-            label4.Location = new System.Drawing.Point(label3.Location.X, label3.Location.Y + label3.Height + 16);
-            txtBoxDoc.Parent = tabPage1;
-            txtBoxDoc.Location = new System.Drawing.Point(label4.Location.X + label4.Width - 1, label4.Location.Y - (label4.Height / 4));
+            
+            int lblAnuncioX = ((groupBoxCliente.Width/2) - (lblAnuncio.Width/2)); 
+            lblAnuncio.Location = new Point(lblAnuncioX, txtBoxEnd.Location.Y + (lblAnuncio.Height / 2));
 
-            label5.Parent = tabPage1;
-            label5.Location = new System.Drawing.Point(label4.Location.X, label4.Location.Y + label4.Height + 16);
-            txtBoxEnd.Parent = tabPage1;
-            txtBoxEnd.Location = new System.Drawing.Point(label5.Location.X + label5.Width, label5.Location.Y - (label5.Height / 4));
+            //lblNome.Location = new System.Drawing.Point(lblAnuncio.Location.X ,20);
+            //txtBoxNome.Parent = tabPage1;
+            //txtBoxNome.Location = new System.Drawing.Point(lblNome.Location.X + lblNome.Width, lblNome.Location.Y - (lblNome.Height / 4));
 
-            lblAnuncio.Parent = tabPage1;
-            lblAnuncio.Location = new System.Drawing.Point((tabPage1.Width / 2) - (lblAnuncio.Width / 2), alturaLblAnuncio);
+            //lblTel.Location = new System.Drawing.Point(lblAnuncio.Location.X, lblNome.Location.Y + lblNome.Height  + 16);
+            //txtBoxTel.Parent = tabPage1;
+            //txtBoxTel.Location = new System.Drawing.Point(lblTel.Location.X + lblTel.Width, lblTel.Location.Y - (lblTel.Height / 4));
 
-            picBoxRegistrar.Parent = tabPage1;
-            picBoxRegistrar.Location = new System.Drawing.Point(lblAnuncio.Location.X + lblAnuncio.Width - picBoxRegistrar.Width, tabControl1.Height - picBoxRegistrar.Height *2);
-            label14.Parent = tabPage1;
-            label14.Location = new System.Drawing.Point(picBoxRegistrar.Location.X - 15, tabControl1.Height - picBoxRegistrar.Height + 5);
+            //lblDoc.Location = new System.Drawing.Point(lblTel.Location.X, lblTel.Location.Y + lblTel.Height + 16);
+            //txtBoxDoc.Parent = tabPage1;
+            //txtBoxDoc.Location = new System.Drawing.Point(lblDoc.Location.X + lblDoc.Width - 1, lblDoc.Location.Y - (lblDoc.Height / 4));
+
+            //lblEnd.Location = new System.Drawing.Point(lblDoc.Location.X, lblDoc.Location.Y + lblDoc.Height + 16);
+            //txtBoxEnd.Parent = tabPage1;
+            //txtBoxEnd.Location = new System.Drawing.Point(lblEnd.Location.X + lblEnd.Width, lblEnd.Location.Y - (lblEnd.Height / 4));
+
+            //lblAnuncio.Location = new System.Drawing.Point((tabPage1.Width / 2) - (lblAnuncio.Width / 2), alturaLblAnuncio);
 
             //------------------------TABPAGE2
 
             lblItem.Parent = tabPage2;
-            lblItem.Location = label2.Location;
+            lblItem.Location = lblNome.Location;
             txtBoxItem.Parent = tabPage2;
             txtBoxItem.Location = new System.Drawing.Point(lblItem.Location.X + lblItem.Width, lblItem.Location.Y);
 
@@ -235,23 +272,34 @@ namespace Servico1
             label8.Location = new System.Drawing.Point(lblItem.Location.X, label10.Location.Y + label10.Height + 16);
             txtBoxValorPago.Parent = tabPage2;
             txtBoxValorPago.Location = new System.Drawing.Point(lblItem.Location.X + label8.Width, label8.Location.Y - (label8.Height/4));
+            colocaItensGBItem();
 
-            picBoxSalvar.Parent = tabPage2;
-            picBoxSalvar.Location = picBoxRegistrar.Location;
-            lblSalvar.Parent = tabPage2;
-            lblSalvar.Location = new System.Drawing.Point(picBoxSalvar.Location.X - (lblSalvar.Width / 2) + (picBoxSalvar.Width / 2 ), tabControl1.Height - picBoxSalvar.Height + 5);
-            
+            groupBoxControleItem.Controls.Add(lblSelecao);
+            groupBoxControleItem.Controls.Add(numeric);
+            groupBoxControleItem.Controls.Add(btnSelecionar);
+            groupBoxControleItem.Controls.Add(btnAlterarNota);
+            groupBoxControleItem.Controls.Add(btnApagar);
+
+            lblSelecao.Location = new Point(Convert.ToInt16(groupBoxControleItem.Width * 0.1) ,25);
+            int numericX = lblSelecao.Width + lblSelecao.Location.X;
+            int numericY = lblSelecao.Location.Y;
+            numeric.Location = new Point(numericX,numericY);
+
+            int btnSelecionarX = Convert.ToInt16(groupBoxControleItem.Width * 0.03);
+            int btnSelecionarY = Convert.ToInt16(groupBoxControleItem.Height * 0.7);
+            btnSelecionar.Location = new Point(btnSelecionarX, btnSelecionarY);
+
+            int btnAlteraNotaX = btnSelecionar.Location.X + btnSelecionar.Width + 5;
+            int btnAlteraNotaY = btnSelecionarY;
+            btnAlterarNota.Location = new Point(btnAlteraNotaX, btnAlteraNotaY);
+
+            //int btnApagarX = btnAlterarNota.Location.X + btnAlterarNota.Width + 5;
+            int btnApagarX = groupBoxControleItem.Width - btnApagar.Width - (Convert.ToInt16(groupBoxControleItem.Width * 0.03));
+            int btnApagarY = btnSelecionarY;
+            btnApagar.Location = new Point(btnApagarX, btnApagarY);
+
             //--------------------------------GROUPBOX1
 
-            picBoxFinalizar.Parent = groupBox1;
-            picBoxFinalizar.Location = new System.Drawing.Point(groupBox1.Location.X + groupBox1.Width - picBoxFinalizar.Width + (tabControl1.Width - groupBox1.Width) - 28, tabControl1.Location.Y + tabControl1.Height + (picBoxFinalizar.Height / 4));
-            lblFinalizar.Parent = groupBox1;
-            lblFinalizar.Location = new System.Drawing.Point(picBoxFinalizar.Location.X + (lblFinalizar.Width / 2 - picBoxFinalizar.Width/2) - 15, picBoxFinalizar.Location.Y + picBoxFinalizar.Height);
-
-            pictureBox2.Parent = groupBox1;
-            pictureBox2.Location = new System.Drawing.Point(picBoxFinalizar.Location.X - pictureBox2.Width - 15, picBoxFinalizar.Location.Y);
-            label6.Parent = groupBox1;
-            label6.Location = new System.Drawing.Point(pictureBox2.Location.X + (label6.Width / 2 - pictureBox2.Width / 2) - 15, pictureBox2.Location.Y + pictureBox2.Height);
 
             //-------------------------------AXACRO
 
@@ -264,16 +312,12 @@ namespace Servico1
             picBoxRodape.Size = new System.Drawing.Size(this.Width - groupBox1.Width - 30, this.Height - axAcroPDF2.Height - pictureBox1.Height + 3 );
             picBoxRodape.Location = new System.Drawing.Point(axAcroPDF2.Location.X, axAcroPDF2.Location.Y + axAcroPDF2.Height + 3);
 
-            picBoxProp.Location = new System.Drawing.Point(picBoxRodape.Location.X + 35, picBoxRodape.Location.Y + 41);
-            lblProp.Location = new System.Drawing.Point(picBoxProp.Location.X + ((picBoxProp.Width / 2) - (lblProp.Width / 2)), picBoxProp.Location.Y - 25);
-
-            picImpri.Location = new System.Drawing.Point(picBoxProp.Location.X + 30 + picImpri.Width, picBoxProp.Location.Y + 5);
-            lblImpri.Location = new System.Drawing.Point(picImpri.Location.X + ((picImpri.Width / 2) - (lblImpri.Width / 2)), lblProp.Location.Y);
-
-            picBoxFechar.Location = new System.Drawing.Point(picImpri.Location.X + 10 + picBoxFechar.Size.Width, picImpri.Location.Y - 7);
-            lblFechar.Location = new System.Drawing.Point(picBoxFechar.Location.X + ((picBoxFechar.Width / 2) - (lblFechar.Width / 2)), lblProp.Location.Y);
-
-            
+            int yButton = picBoxRodape.Location.Y + ((picBoxRodape.Height / 2)-(btnRegistro.Height/2));
+            btnRegistro.Location = new System.Drawing.Point(picBoxRodape.Location.X + 20, yButton);
+            btnSalvar.Location = new System.Drawing.Point(btnRegistro.Location.X + 120, yButton);
+            btnFinalizar.Location = new System.Drawing.Point(btnSalvar.Location.X + 120, yButton);
+            btnImprimir.Location = new System.Drawing.Point(btnFinalizar.Location.X + 120, yButton);
+            btnFechar.Location = new System.Drawing.Point(btnImprimir.Location.X + 120, yButton);
 
             string nome = "";
             foreach (Control item in groupBox1.Controls)
@@ -312,7 +356,7 @@ namespace Servico1
 
         private void textBox2_Leave(object sender, EventArgs e) //TextBoxTelefone
         {
-            bool verificaSomenteNumeros = Regex.IsMatch(txtBoxTelefone.Text, @"^\d+$");
+            bool verificaSomenteNumeros = Regex.IsMatch(txtBoxTel.Text, @"^\d+$");
         }
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -337,7 +381,7 @@ namespace Servico1
 
                 cliente = c.procurarClientePeloNomeRetornLista(txtBoxNome.Text);
 
-                txtBoxTelefone.Text = cliente[0].CELULAR;
+                txtBoxTel.Text = cliente[0].CELULAR;
                 txtBoxDoc.Text = cliente[0].DOC_PESSOAL;
                 txtBoxEnd.Text = cliente[0].ENDERECO;
             }
@@ -348,123 +392,18 @@ namespace Servico1
 
         }
 
-        private void picBoxProp_Click(object sender, EventArgs e)
-        {
-            temporizadorBotao(picBoxProp);
-            picBoxProp.Focus();
-            log.registrar("Botão PROPRIEDADES foi clicado.");
-            FormAlteraPropriedades alteraProp = new FormAlteraPropriedades();
-            alteraProp.Show();
-        }
-
         private void picBoxSalvar_Click(object sender, EventArgs e)
         {
-            temporizadorBotao(picBoxSalvar);
-            log.registrar("Botao SALVAR foi clicado.");
-
-            //-----------------------------------------
-
-            MudarCorTextBox?.Invoke(this, EventArgs.Empty);
-
-            if (txtBoxItem.Text != "" && txtBoxValor.Text != "")
-            {
-                if (primeiraVezClickando)
-                {
-                    pdf.criaFolhaEmBranco(filePathAndName);
-                    axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-                    log.registrar("Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)");
-
-                    primeiraVezClickando = false;
-                }
-                if (registrado == false)
-                {
-                    picBoxRegistrar_Click(sender, e);
-                    log.registrar("Tentativa de Registro a partir do botão Salvar.");
-                    
-                    if (txtBoxNome.Text != "" && txtBoxTelefone.Text != "" && txtBoxDoc.Text != "" && txtBoxEnd.Text != "") 
-                    {
-                        registrado = true; 
-                    }
-                    else
-                    {
-                        log.registrar("Algum campo vazio.");
-                    }
-                }
-                string[,] array = new string[1, 4];
-
-                array[0, 0] = txtBoxItem.Text;
-
-                array[0, 1] = txtBoxDesc.Text;
-
-                array[0, 2] = comboBoxQt.Text;
-
-                array[0, 3] = txtBoxValor.Text;
-
-
-                listaDados.Add(array);
-
-                //--------------------DIAGNOSTICO
-                OficinaDAO ofDAO = new OficinaDAO();
-                Oficina of = new Oficina();
-                of = ofDAO.getOficinaValues();
-
-                string diagnostico = "";
-                if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
-                else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
-                else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
-
-                //-------------------VALOR KM
-                string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
-                //------------------
-
-                string valorPago = txtBoxValorPago.Text;
-
-
-                pdf.atualizaTabela(filePathAndName, listaDados, diagnostico, valorKm, valorPago);
-                log.registrar("Atualizou o pdf.");
-                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-                
-
-            }
-            else
-            {
-                log.registrar("Campos item e valor vazios.");
-            }
+            
         }
 
         private void picBoxFinalizar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                log.registrar("Botão FINALIZAR clicado.");
-                temporizadorBotao(picBoxFinalizar);
-                picBoxFinalizar.Focus();
-                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-                
-
-                DialogResult r = MessageBox.Show("Tem certeza que deseja registrar a venda?", "Confirmação", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes) 
-                {
-                    log.registrar("Tentando finalizar.");
-                    finalizacao(); 
-                }
-                else
-                {
-                    log.registrar("Cancelou a finalização.");
-                }
-
-                bandeiraParaBD = true;
-            }
-            catch (Exception ex)
-            {
-                log.registrar("Aconteceu um erro: "+ ex.Message);
-                MessageBox.Show("Ocorreu um erro, contacte o desenvolvedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         public void finalizacao()
         {
-
             double valorFinalParaDB = pdf.valorFinalParaDB;
             double valorPagoPeloCliente = Convert.ToDouble(txtBoxValorPago.Text);
 
@@ -489,13 +428,9 @@ namespace Servico1
 
             ServicosDAO s = new ServicosDAO();
 
-            if (cortador == 0)
-            {
-                c.adicionarNumeroNota(cliente[0].ID_PF); // 21
-                numeroNota = c.buscaNumeroNota(cliente[0].ID_PF);
-                cortador = 1;
-            }
-
+            c.adicionarNumeroNota(cliente[0].ID_PF);
+            numeroNota = c.buscaNumeroNota(cliente[0].ID_PF);
+            
             s.insertOrdemServico(cliente[0].ID_PF, listaDados, dataDoArquivo, valorPagoPeloCliente.ToString(), valorFinalParaDB.ToString(), numeroNota, comboTipoPag, pagou, filePathAndName);
             log.registrar("Finalizado.\r\nPerfil ordem de serviço: \r\n - ID Cliente: "+ cliente[0].ID_PF + "\r\n - Data serviço: "+ dataDoArquivo);
         }
@@ -510,50 +445,7 @@ namespace Servico1
 
         private void RegistroOficialReal(object sender, EventArgs e)
         {
-            if (registraUmavez == 1) log.registrar("Começando o registro.");
-            temporizadorBotao(picBoxRegistrar);
-
-            // validador = 0 significa que tem campo vazio
-            // validador = 1 significa que doc já existe
-            // validador = 2 significa que nome já existe
-            // validador = 3 significa que nome e doc já existem
-            // validador = 4 significa que deu tudo certo
-            // validador = 5 significa que o programa caiu em excessão.
-
-            dataDoArquivo = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-            int validador = c.insertClienteParaPdV(txtBoxNome.Text, txtBoxEnd.Text, txtBoxTelefone.Text, dataDoArquivo, txtBoxDoc.Text, "Descrição cliente", 0);
-            cliente = c.procurarClientePeloNomeRetornLista(txtBoxNome.Text);
-
-            if (cliente.Count != 0)
-            {
-                listaDados.Clear();
-                limpezaDeCampos();
-                pdf.atualizaTabelaComCliente(filePathAndName, cliente[0].NOME);
-                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-                if (registraUmavez == 1)
-                {
-                    log.registrar("Carregando dados no visualizador de PDF. (Pela função de registro)");
-                }
-                axAcroPDF2.ResetText();
-                registrado = true;
-                lblAnuncio.Text = "";
-                if (registraUmavez == 1 && registrado)
-                {
-                    log.registrar("Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: "+txtBoxNome.Text);
-
-                }
-            }
-            else
-            {
-                if (validador == 0) { lblAnuncio.Text = "Anuncio: Existem campos vazios."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Campos vazios."); }
-                else if (validador == 1) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse DOCUMENTO."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o documento."); }
-                else if (validador == 2) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse NOME."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o nome."); }
-                else if (validador == 3) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse NOME e DOCUMENTO."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o nome e documento."); }
-            }
-            //groupBox1.Enabled = false;
-            txtBoxItem.Focus();
-            registraUmavez--;
+            
         }
 
         private void picBoxRegistrar_Click(object sender, EventArgs e)
@@ -611,9 +503,7 @@ namespace Servico1
 
         private void picBoxFechar_DoubleClick(object sender, EventArgs e)
         {
-            temporizadorBotao(picBoxFechar);
-            log.registrar("Botão FECHAR clicado.");
-            this.Close();
+            
         }
 
         private void picBoxRebot_DoubleClick(object sender, EventArgs e)
@@ -628,53 +518,52 @@ namespace Servico1
 
         private void checkBoxFora_CheckedChanged_1(object sender, EventArgs e)
         {
+            //if (checkBoxFora.Checked)
+            //{
+            //    checkBoxOficina.Checked = false;
+            //}
 
-            if (checkBoxFora.Checked)
-            {
-                checkBoxOficina.Checked = false;
-            }
+            //OficinaDAO ofDAO = new OficinaDAO();
+            //Oficina of = new Oficina();
+            //of = ofDAO.getOficinaValues();
+            //Pdf p = new Pdf();
+            //string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
 
-            OficinaDAO ofDAO = new OficinaDAO();
-            Oficina of = new Oficina();
-            of = ofDAO.getOficinaValues();
-            Pdf p = new Pdf();
-            string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
+            //string diagnostico = "";
+            //if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
+            //else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
+            //else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
 
-            string diagnostico = "";
-            if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
-            else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
-            else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
+            //string valorPago = txtBoxValorPago.Text;
+            //p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
 
-            string valorPago = txtBoxValorPago.Text;
-            p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
-
-            axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-            log.registrar("Carregando dados no visualizador de PDF. (Pelo checkBoxFora_CheckedChanged_1)");
+            //axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+            //log.registrar("Carregando dados no visualizador de PDF. (Pelo checkBoxFora_CheckedChanged_1)");
         }
 
         private void checkBoxOficina_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (checkBoxOficina.Checked)
-            {
-                checkBoxFora.Checked = false;
-            }
+            //if (checkBoxOficina.Checked)
+            //{
+            //    checkBoxFora.Checked = false;
+            //}
 
-            OficinaDAO ofDAO = new OficinaDAO();
-            Oficina of = new Oficina();
-            of = ofDAO.getOficinaValues();
-            Pdf p = new Pdf();
-            string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
+            //OficinaDAO ofDAO = new OficinaDAO();
+            //Oficina of = new Oficina();
+            //of = ofDAO.getOficinaValues();
+            //Pdf p = new Pdf();
+            //string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
 
-            string diagnostico = "";
-            if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
-            else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
-            else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
+            //string diagnostico = "";
+            //if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
+            //else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
+            //else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
 
-            string valorPago = txtBoxValorPago.Text;
-            p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
+            //string valorPago = txtBoxValorPago.Text;
+            //p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
 
-            axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-            log.registrar("Carregando dados no visualizador de PDF. (Pelo checkBoxOficina_CheckedChanged_1)");
+            //axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+            //log.registrar("Carregando dados no visualizador de PDF. (Pelo checkBoxOficina_CheckedChanged_1)");
         }
 
         private void pBoxSalvarConfig_Click(object sender, EventArgs e)
@@ -710,93 +599,88 @@ namespace Servico1
 
         private void FormPDV_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (tentativaFinalizar)
+            {
+                try
+                {
+                    finalizacao();
+                }
+                catch (Exception ex)
+                {
+                    log.registrar("Erro na impressão: \r\n" + ex.Message);
+                    MessageBox.Show("Ocorreu um erro, comunique o suporte.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+            }
         }
 
         private void txtBoxValorPago_Leave(object sender, EventArgs e)
         {
-            if (checkBoxFora.Checked)
-            {
-                checkBoxOficina.Checked = false;
-            }
+            //if (checkBoxFora.Checked)
+            //{
+            //    checkBoxOficina.Checked = false;
+            //}
 
-            OficinaDAO ofDAO = new OficinaDAO();
-            Oficina of = new Oficina();
-            of = ofDAO.getOficinaValues();
-            Pdf p = new Pdf();
-            string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
+            //OficinaDAO ofDAO = new OficinaDAO();
+            //Oficina of = new Oficina();
+            //of = ofDAO.getOficinaValues();
+            //Pdf p = new Pdf();
+            //string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
 
-            string diagnostico = "";
-            if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
-            else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
-            else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
+            //string diagnostico = "";
+            //if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
+            //else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
+            //else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
 
-            string valorPago = txtBoxValorPago.Text;
-            p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
+            //string valorPago = txtBoxValorPago.Text;
+            //try
+            //{
+            //    p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
 
-            axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-            log.registrar("Valor pago saida, valor total: " + valorPago + " - cliente: "+ cliente[0].NOME);
+            //}
+            //catch (Exception)
+            //{
+
+                
+            //}
+
+            //axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+            //log.registrar("Valor pago saida, valor total: " + valorPago + " - cliente: "+ cliente[0].NOME);
         }
 
         private void textBox5_Leave(object sender, EventArgs e)
         {
-            if (checkBoxFora.Checked)
-            {
-                checkBoxOficina.Checked = false;
-            }
+            //if (checkBoxFora.Checked)
+            //{
+            //    checkBoxOficina.Checked = false;
+            //}
 
-            OficinaDAO ofDAO = new OficinaDAO();
-            Oficina of = new Oficina();
-            of = ofDAO.getOficinaValues();
-            Pdf p = new Pdf();
-            string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
+            //OficinaDAO ofDAO = new OficinaDAO();
+            //Oficina of = new Oficina();
+            //of = ofDAO.getOficinaValues();
+            //Pdf p = new Pdf();
+            //string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
 
-            string diagnostico = "";
-            if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
-            else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
-            else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
+            //string diagnostico = "";
+            //if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
+            //else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
+            //else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
 
-            string valorPago = txtBoxValorPago.Text;
-            p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
+            //string valorPago = txtBoxValorPago.Text;
+            //p.mudaValorDiagnostico(filePathAndName, listaDados, diagnostico, valorKm, cliente[0].NOME, cliente[0].DOC_PESSOAL, cliente[0].ENDERECO, cliente[0].CELULAR, valorPago);
 
-            axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+            //axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
             
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            temporizadorBotao(pictureBox2);
-            pictureBox2.Focus();
-            log.registrar("Botão ATUALIZAR clicado.");
+        
         }
 
         private void picImpri_Click(object sender, EventArgs e)
         {
-            log.registrar("O botão IMPRIMIR clicado.");
-            temporizadorBotao(picImpri);
-            picImpri.Focus();
-            try
-            {
-                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-                
-
-                DialogResult r = MessageBox.Show("Você deseja imprimir?", "Confirmação", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes) 
-                {
-                    log.registrar("Impressão do arquivo feita: "+ filePathAndName);
-                    axAcroPDF2.printWithDialog(); 
-                }
-                else
-                {
-                    log.registrar("Impressão cancelada.");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                log.registrar("Erro na impressão: \r\n"+ex.Message);
-                MessageBox.Show("Ocorreu um erro, comunique o suporte.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -837,6 +721,302 @@ namespace Servico1
         private void comboBoxTipo_Click(object sender, EventArgs e)
         {
             log.registrar("Botão comboBox selecionar tipo de pagamento foi clicado: " + comboBoxTipo.Text);
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            if (registraUmavez == 1) log.registrar("Começando o registro.");
+            
+            // validador = 0 significa que tem campo vazio
+            // validador = 1 significa que doc já existe
+            // validador = 2 significa que nome já existe
+            // validador = 3 significa que nome e doc já existem
+            // validador = 4 significa que deu tudo certo
+            // validador = 5 significa que o programa caiu em excessão.
+
+            dataDoArquivo = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            int validador = c.insertClienteParaPdV(txtBoxNome.Text, txtBoxEnd.Text, txtBoxTel.Text, dataDoArquivo, txtBoxDoc.Text, "Descrição cliente", 0);
+            cliente = c.procurarClientePeloNomeRetornLista(txtBoxNome.Text);
+
+            if (cliente.Count != 0)
+            {
+                listaDados.Clear();
+                limpezaDeCampos();
+                pdf.atualizaTabelaComCliente(filePathAndName, cliente[0].NOME);
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+                if (registraUmavez == 1)
+                {
+                    log.registrar("Carregando dados no visualizador de PDF. (Pela função de registro)");
+                }
+                axAcroPDF2.ResetText();
+                registrado = true;
+                lblAnuncio.Text = "";
+                if (registraUmavez == 1 && registrado)
+                {
+                    log.registrar("Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: " + txtBoxNome.Text);
+
+                }
+            }
+            else
+            {
+                if (validador == 0) { lblAnuncio.Text = "Anuncio: Existem campos vazios."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Campos vazios."); }
+                else if (validador == 1) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse DOCUMENTO."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o documento."); }
+                else if (validador == 2) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse NOME."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o nome."); }
+                else if (validador == 3) { lblAnuncio.Text = "Anuncio: Já existe um cliente com esse NOME e DOCUMENTO."; if (registraUmavez == 1) log.registrar("Tentativa de Registro: Já existe o nome e documento."); }
+            }
+            //groupBox1.Enabled = false;
+            txtBoxItem.Focus();
+            registraUmavez--;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            log.registrar("Botao SALVAR foi clicado.");
+
+            //-----------------------------------------
+
+            MudarCorTextBox?.Invoke(this, EventArgs.Empty);
+
+            if (txtBoxItem.Text != "" && txtBoxValor.Text != "")
+            {
+                if (primeiraVezClickando)
+                {
+                    pdf.criaFolhaEmBranco(filePathAndName);
+                    axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+                    log.registrar("Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)");
+
+                    primeiraVezClickando = false;
+                }
+                if (registrado == false)
+                {
+                    log.registrar("Tentativa de Registro a partir do botão Salvar.");
+
+                    if (txtBoxNome.Text != "" && txtBoxTel.Text != "" && txtBoxDoc.Text != "" && txtBoxEnd.Text != "")
+                    {
+                        registrado = true;
+                    }
+                    else
+                    {
+                        log.registrar("Algum campo vazio.");
+                    }
+                }
+
+                string[,] array = new string[1, 4];
+
+                array[0, 0] = txtBoxItem.Text;
+
+                array[0, 1] = txtBoxDesc.Text;
+
+                array[0, 2] = comboBoxQt.Text;
+
+                array[0, 3] = txtBoxValor.Text;
+
+                listaDados.Add(array);
+
+                ListaItem l = new ListaItem();
+                l.item = txtBoxItem.Text;
+                l.valorItem = txtBoxValor.Text;
+                l.desc = txtBoxDesc.Text;
+                l.qt = comboBoxQt.Text;
+                
+                lI.Add(l);
+
+                //--------------------DIAGNOSTICO
+                OficinaDAO ofDAO = new OficinaDAO();
+                Oficina of = new Oficina();
+                of = ofDAO.getOficinaValues();
+
+                string diagnostico = "";
+                if (checkBoxOficina.Checked) { diagnostico = of.VALOR_DIAG_OFICINA.ToString(); }
+                else if (checkBoxFora.Checked) { diagnostico = of.VALOR_DIAG_FORA.ToString(); }
+                else if (!checkBoxOficina.Checked && !checkBoxFora.Checked) { diagnostico = "0"; }
+
+                //-------------------VALOR KM
+                string valorKm = (of.VALOR_KM * Convert.ToDouble(textBox5.Text)).ToString();
+                //------------------
+
+                string valorPago = txtBoxValorPago.Text;
+
+                pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", valorPago);
+                log.registrar("Atualizou o pdf.");
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+                
+                limpaCamposItens();
+            }
+            else
+            {
+                log.registrar("Campos item e valor vazios.");
+            }
+        }
+        
+        private void limpaCamposItens()
+        {
+            txtBoxItem.Text = "";
+            txtBoxValor.Text = "";
+            comboBoxQt.SelectedIndex = 0;
+            txtBoxDesc.Text = "";
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            log.registrar("O botão IMPRIMIR clicado.");
+            try
+            {
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+
+                
+                DialogResult r = MessageBox.Show("Você deseja imprimir?", "Confirmação", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    log.registrar("Impressão do arquivo feita: " + filePathAndName);
+                    axAcroPDF2.printWithDialog();
+                }
+                else
+                {
+                    log.registrar("Impressão cancelada.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.registrar("Erro na impressão: \r\n" + ex.Message);
+                MessageBox.Show("Ocorreu um erro, comunique o suporte.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            log.registrar("Botão FECHAR clicado.");
+            this.Close();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // O EVENTO FINALIZAR ESTÁ VINCULADO AO FORM_CLOSING
+
+                log.registrar("Botão FINALIZAR clicado.");
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+
+
+                DialogResult r = MessageBox.Show("Tem certeza que deseja registrar a venda?", "Confirmação", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    log.registrar("Tentando finalizar.");
+                    tentativaFinalizar = true;
+                    //finalizacao();
+                }
+                else
+                {
+                    log.registrar("Cancelou a finalização.");
+                    tentativaFinalizar = false;
+                }
+
+                bandeiraParaBD = true;
+            }
+            catch (Exception ex)
+            {
+                log.registrar("Aconteceu um erro: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro, contacte o desenvolvedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txtBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormPDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void FormPDV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+
+            return base.ProcessDialogKey(keyData);
+        }
+
+        private void numeric_ValueChanged(object sender, EventArgs e)
+        {
+            lblSelecao.Text = numeric.Value.ToString();
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            if ((numeric.Value -1) >= 0 && (numeric.Value - 1) < lI.Count)
+            {
+                int indice = Convert.ToInt16(numeric.Value - 1);
+                txtBoxItem.Text = listaDados[indice][0, 0];
+                txtBoxDesc.Text = listaDados[indice][0, 1];
+                comboBoxQt.Text = listaDados[indice][0, 2];
+                txtBoxValor.Text = listaDados[indice][0, 3];
+
+                ListaItem l = new ListaItem();
+                l = lI[indice];
+            }
+        }
+
+        private void btnAlterarNota_Click(object sender, EventArgs e)
+        {
+            if ((numeric.Value - 1) >= 0 && (numeric.Value - 1) < lI.Count)
+            {
+                int indice = Convert.ToInt16(numeric.Value - 1);
+                ListaItem l = new ListaItem();
+                l = lI[indice];
+                l.item = txtBoxItem.Text;
+                l.valorItem = txtBoxValor.Text;
+                l.qt = comboBoxQt.Text;
+                l.desc = txtBoxDesc.Text;
+
+                listaDados[indice][0, 0] = txtBoxItem.Text;
+                listaDados[indice][0, 1] = txtBoxDesc.Text;
+                listaDados[indice][0, 2] = comboBoxQt.Text;
+                listaDados[indice][0, 3] = txtBoxValor.Text;
+
+                pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", txtBoxValorPago.Text);
+                log.registrar("Atualizou o pdf.");
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+
+                MessageBox.Show(l.item + "" + l.valorItem + "" + l.qt + "" + l.desc);
+            }
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            if ((numeric.Value - 1) >= 0 && (numeric.Value - 1) < lI.Count)
+            {
+                int indice = Convert.ToInt16(numeric.Value - 1);
+                lI.RemoveAt(indice);
+                MessageBox.Show("Removido");
+
+                listaDados.RemoveAt(indice);
+                pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", txtBoxValorPago.Text);
+                log.registrar("Atualizou o pdf.");
+                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

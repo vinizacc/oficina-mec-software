@@ -1,0 +1,65 @@
+Log do arquivo - 13-09-2023 19-32-24
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 13-09-2023 19-32-24
+O botão login foi clicado.
+O login foi validado.
+LOGIN: adm|| SENHA: 1234
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+O botão Notas vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+Botão PROCURAR clicado.
+Procura por nome: t
+----------EXCEÇÃO----------
+EXCEÇÃO: O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+MÉTODO QUE GEROU A EXCEÇÃO: System.Object get_Item(Int32)
+DATA/HORA DA EXCEÇÃO: 19:32:33 13-09-23
+TRILHA DA EXCEÇÃO:    em System.Collections.ArrayList.get_Item(Int32 index)
+   em System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   em System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   em Servico1.FormNotas.dataGridViewAltera_DataBindingComplete(Object sender, DataGridViewBindingCompleteEventArgs e) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\FormNotas.cs:linha 272
+   em System.Windows.Forms.DataGridView.OnDataBindingComplete(DataGridViewBindingCompleteEventArgs e)
+   em System.Windows.Forms.DataGridView.OnDataSourceChanged(EventArgs e)
+   em System.Windows.Forms.DataGridView.set_DataSource(Object value)
+   em Servico1.FormNotas.dataGridViewBusca_CellDoubleClick(Object sender, DataGridViewCellEventArgs e) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\FormNotas.cs:linha 245
+   em System.Windows.Forms.DataGridView.OnCellDoubleClick(DataGridViewCellEventArgs e)
+   em System.Windows.Forms.DataGridView.OnDoubleClick(EventArgs e)
+   em System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   em System.Windows.Forms.Control.WndProc(Message& m)
+   em System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   em System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   em System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   em Servico1.Servico.notasToolStripMenuItem_Click(Object sender, EventArgs e) na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\Index.cs:linha 166
+   em System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   em System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   em System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   em System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   em System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   em System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   em System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   em System.Windows.Forms.Control.WndProc(Message& m)
+   em System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   em System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   em System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   em System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   em System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   em System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   em Servico1.Program.Main() na C:\Users\Vinícius\OneDrive\Área de Trabalho\Programa Backup\Software\Servico1\Program.cs:linha 17
+---------------------------

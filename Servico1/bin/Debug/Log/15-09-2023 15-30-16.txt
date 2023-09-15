@@ -1,0 +1,20 @@
+Log do arquivo - 15-09-2023 15-30-16
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 15-30-16
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+O botão Acesso vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------

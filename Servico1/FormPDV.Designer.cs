@@ -1,5 +1,6 @@
 ﻿namespace Servico1
 {
+    
     partial class FormPDV
     {
         /// <summary>
@@ -29,100 +30,68 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPDV));
-            this.txtBoxNome = new System.Windows.Forms.TextBox();
-            this.txtBoxTelefone = new System.Windows.Forms.TextBox();
             this.labelPdv = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxDoc = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBoxEnd = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblAnuncio = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.picBoxRegistrar = new System.Windows.Forms.PictureBox();
+            this.txtBoxEnd = new System.Windows.Forms.TextBox();
+            this.txtBoxDoc = new System.Windows.Forms.TextBox();
+            this.txtBoxTel = new System.Windows.Forms.TextBox();
+            this.txtBoxNome = new System.Windows.Forms.TextBox();
+            this.lblDoc = new System.Windows.Forms.Label();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.picBoxSalvar = new System.Windows.Forms.PictureBox();
-            this.lblSalvar = new System.Windows.Forms.Label();
-            this.txtBoxValorPago = new System.Windows.Forms.TextBox();
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.lblItem = new System.Windows.Forms.Label();
-            this.txtBoxItem = new System.Windows.Forms.TextBox();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.lblQt = new System.Windows.Forms.Label();
-            this.comboBoxQt = new System.Windows.Forms.ComboBox();
+            this.groupBoxControleItem = new System.Windows.Forms.GroupBox();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnAlterarNota = new System.Windows.Forms.Button();
+            this.lblSelecao = new System.Windows.Forms.Label();
+            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.numeric = new System.Windows.Forms.NumericUpDown();
+            this.groupBoxItem = new System.Windows.Forms.GroupBox();
             this.txtBoxDesc = new System.Windows.Forms.RichTextBox();
-            this.lblValor = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtBoxValor = new System.Windows.Forms.TextBox();
-            this.lblFinalizar = new System.Windows.Forms.Label();
-            this.picBoxFinalizar = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.txtBoxValorPago = new System.Windows.Forms.TextBox();
+            this.comboBoxQt = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
+            this.lblQt = new System.Windows.Forms.Label();
+            this.lblItem = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.txtBoxItem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.checkBoxFora = new System.Windows.Forms.CheckBox();
             this.checkBoxOficina = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.lblProp = new System.Windows.Forms.Label();
-            this.lblFechar = new System.Windows.Forms.Label();
             this.axAcroPDF2 = new AxAcroPDFLib.AxAcroPDF();
-            this.lblRebot = new System.Windows.Forms.Label();
             this.btnFantasmaRegistro = new System.Windows.Forms.Button();
-            this.picBoxRebot = new System.Windows.Forms.PictureBox();
-            this.picBoxFechar = new System.Windows.Forms.PictureBox();
-            this.picBoxProp = new System.Windows.Forms.PictureBox();
             this.picBoxRodape = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picImpri = new System.Windows.Forms.PictureBox();
-            this.lblImpri = new System.Windows.Forms.Label();
+            this.btnRegistro = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.groupBoxCliente = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRegistrar)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSalvar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinalizar)).BeginInit();
+            this.groupBoxControleItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
+            this.groupBoxItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRebot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFechar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRodape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImpri)).BeginInit();
+            this.groupBoxCliente.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtBoxNome
-            // 
-            this.txtBoxNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtBoxNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtBoxNome.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNome.Location = new System.Drawing.Point(168, 60);
-            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(5);
-            this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(235, 34);
-            this.txtBoxNome.TabIndex = 0;
-            this.txtBoxNome.Click += new System.EventHandler(this.txtBoxNome_Click);
-            this.txtBoxNome.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.txtBoxNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            this.txtBoxNome.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // txtBoxTelefone
-            // 
-            this.txtBoxTelefone.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTelefone.Location = new System.Drawing.Point(166, 102);
-            this.txtBoxTelefone.Name = "txtBoxTelefone";
-            this.txtBoxTelefone.Size = new System.Drawing.Size(235, 34);
-            this.txtBoxTelefone.TabIndex = 1;
-            this.txtBoxTelefone.Click += new System.EventHandler(this.txtBoxTelefone_Click);
-            this.txtBoxTelefone.TextChanged += new System.EventHandler(this.txtBoxTelefone_TextChanged);
-            this.txtBoxTelefone.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // labelPdv
             // 
@@ -137,80 +106,10 @@
             this.labelPdv.Text = "PONTO DE VENDA";
             this.labelPdv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nome:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Telefone:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Documento:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBoxDoc
-            // 
-            this.txtBoxDoc.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDoc.Location = new System.Drawing.Point(200, 147);
-            this.txtBoxDoc.Name = "txtBoxDoc";
-            this.txtBoxDoc.Size = new System.Drawing.Size(201, 34);
-            this.txtBoxDoc.TabIndex = 2;
-            this.txtBoxDoc.Click += new System.EventHandler(this.txtBoxDoc_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Endereço:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBoxEnd
-            // 
-            this.txtBoxEnd.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEnd.Location = new System.Drawing.Point(184, 194);
-            this.txtBoxEnd.Name = "txtBoxEnd";
-            this.txtBoxEnd.Size = new System.Drawing.Size(217, 34);
-            this.txtBoxEnd.TabIndex = 3;
-            this.txtBoxEnd.Click += new System.EventHandler(this.txtBoxEnd_Click);
-            // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox1.Controls.Add(this.tabControl1);
-            this.groupBox1.Controls.Add(this.lblFinalizar);
-            this.groupBox1.Controls.Add(this.picBoxFinalizar);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 126);
@@ -218,36 +117,13 @@
             this.groupBox1.Size = new System.Drawing.Size(519, 917);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(268, 871);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 26);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Atualizar";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = global::Braga.Properties.Resources.rotate;
-            this.pictureBox2.Location = new System.Drawing.Point(279, 777);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(28, 114);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -257,278 +133,377 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.tabPage1.Controls.Add(this.lblAnuncio);
-            this.tabPage1.Controls.Add(this.txtBoxEnd);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.txtBoxDoc);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.picBoxRegistrar);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtBoxTelefone);
-            this.tabPage1.Controls.Add(this.txtBoxNome);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Controls.Add(this.groupBoxCliente);
+            this.tabPage1.Location = new System.Drawing.Point(4, 37);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(450, 605);
+            this.tabPage1.Size = new System.Drawing.Size(450, 600);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dados do cliente";
+            this.tabPage1.Text = "Cliente";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // lblAnuncio
             // 
-            this.lblAnuncio.BackColor = System.Drawing.SystemColors.Info;
-            this.lblAnuncio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnuncio.Location = new System.Drawing.Point(46, 251);
+            this.lblAnuncio.BackColor = System.Drawing.Color.White;
+            this.lblAnuncio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnuncio.Location = new System.Drawing.Point(15, 217);
             this.lblAnuncio.Name = "lblAnuncio";
             this.lblAnuncio.Size = new System.Drawing.Size(355, 78);
             this.lblAnuncio.TabIndex = 26;
             this.lblAnuncio.Text = "Anuncio:";
-            this.lblAnuncio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAnuncio.Click += new System.EventHandler(this.lblAnuncio_Click);
             // 
-            // label14
+            // txtBoxEnd
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label14.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(172, 563);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 26);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Registrar";
+            this.txtBoxEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEnd.Location = new System.Drawing.Point(145, 155);
+            this.txtBoxEnd.Name = "txtBoxEnd";
+            this.txtBoxEnd.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxEnd.TabIndex = 3;
+            this.txtBoxEnd.Click += new System.EventHandler(this.txtBoxEnd_Click);
             // 
-            // picBoxRegistrar
+            // txtBoxDoc
             // 
-            this.picBoxRegistrar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.picBoxRegistrar.Image = global::Braga.Properties.Resources.edit;
-            this.picBoxRegistrar.Location = new System.Drawing.Point(185, 469);
-            this.picBoxRegistrar.Name = "picBoxRegistrar";
-            this.picBoxRegistrar.Size = new System.Drawing.Size(80, 80);
-            this.picBoxRegistrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxRegistrar.TabIndex = 25;
-            this.picBoxRegistrar.TabStop = false;
-            this.picBoxRegistrar.Click += new System.EventHandler(this.picBoxRegistrar_Click);
+            this.txtBoxDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDoc.Location = new System.Drawing.Point(145, 115);
+            this.txtBoxDoc.Name = "txtBoxDoc";
+            this.txtBoxDoc.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxDoc.TabIndex = 2;
+            this.txtBoxDoc.Click += new System.EventHandler(this.txtBoxDoc_Click);
+            // 
+            // txtBoxTel
+            // 
+            this.txtBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTel.Location = new System.Drawing.Point(145, 74);
+            this.txtBoxTel.Name = "txtBoxTel";
+            this.txtBoxTel.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxTel.TabIndex = 1;
+            this.txtBoxTel.Click += new System.EventHandler(this.txtBoxTelefone_Click);
+            this.txtBoxTel.TextChanged += new System.EventHandler(this.txtBoxTelefone_TextChanged);
+            this.txtBoxTel.Leave += new System.EventHandler(this.textBox2_Leave);
+            // 
+            // txtBoxNome
+            // 
+            this.txtBoxNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBoxNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNome.Location = new System.Drawing.Point(145, 31);
+            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxNome.Name = "txtBoxNome";
+            this.txtBoxNome.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxNome.TabIndex = 0;
+            this.txtBoxNome.Click += new System.EventHandler(this.txtBoxNome_Click);
+            this.txtBoxNome.TextChanged += new System.EventHandler(this.txtBoxNome_TextChanged);
+            this.txtBoxNome.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.txtBoxNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.txtBoxNome.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // lblDoc
+            // 
+            this.lblDoc.AutoSize = true;
+            this.lblDoc.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoc.Location = new System.Drawing.Point(23, 118);
+            this.lblDoc.Name = "lblDoc";
+            this.lblDoc.Size = new System.Drawing.Size(119, 28);
+            this.lblDoc.TabIndex = 7;
+            this.lblDoc.Text = "Documento:";
+            this.lblDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Location = new System.Drawing.Point(42, 158);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(97, 28);
+            this.lblEnd.TabIndex = 9;
+            this.lblEnd.Text = "Endereço:";
+            this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel.Location = new System.Drawing.Point(56, 77);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(88, 28);
+            this.lblTel.TabIndex = 6;
+            this.lblTel.Text = "Telefone:";
+            this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(70, 34);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(70, 28);
+            this.lblNome.TabIndex = 5;
+            this.lblNome.Text = "Nome:";
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.picBoxSalvar);
-            this.tabPage2.Controls.Add(this.lblSalvar);
-            this.tabPage2.Controls.Add(this.txtBoxValorPago);
-            this.tabPage2.Controls.Add(this.comboBoxTipo);
-            this.tabPage2.Controls.Add(this.lblItem);
-            this.tabPage2.Controls.Add(this.txtBoxItem);
-            this.tabPage2.Controls.Add(this.lblDesc);
-            this.tabPage2.Controls.Add(this.lblQt);
-            this.tabPage2.Controls.Add(this.comboBoxQt);
-            this.tabPage2.Controls.Add(this.txtBoxDesc);
-            this.tabPage2.Controls.Add(this.lblValor);
-            this.tabPage2.Controls.Add(this.txtBoxValor);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Controls.Add(this.groupBoxControleItem);
+            this.tabPage2.Controls.Add(this.groupBoxItem);
+            this.tabPage2.Location = new System.Drawing.Point(4, 37);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(450, 605);
+            this.tabPage2.Size = new System.Drawing.Size(450, 600);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Valores e itens";
+            this.tabPage2.Text = "Item";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBoxControleItem
+            // 
+            this.groupBoxControleItem.Controls.Add(this.btnApagar);
+            this.groupBoxControleItem.Controls.Add(this.btnAlterarNota);
+            this.groupBoxControleItem.Controls.Add(this.lblSelecao);
+            this.groupBoxControleItem.Controls.Add(this.btnSelecionar);
+            this.groupBoxControleItem.Controls.Add(this.numeric);
+            this.groupBoxControleItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxControleItem.Location = new System.Drawing.Point(24, 397);
+            this.groupBoxControleItem.Name = "groupBoxControleItem";
+            this.groupBoxControleItem.Size = new System.Drawing.Size(403, 156);
+            this.groupBoxControleItem.TabIndex = 40;
+            this.groupBoxControleItem.TabStop = false;
+            this.groupBoxControleItem.Text = "Controle de item";
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagar.Location = new System.Drawing.Point(291, 108);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(97, 37);
+            this.btnApagar.TabIndex = 44;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // btnAlterarNota
+            // 
+            this.btnAlterarNota.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarNota.Location = new System.Drawing.Point(125, 108);
+            this.btnAlterarNota.Name = "btnAlterarNota";
+            this.btnAlterarNota.Size = new System.Drawing.Size(97, 37);
+            this.btnAlterarNota.TabIndex = 43;
+            this.btnAlterarNota.Text = "Alterar";
+            this.btnAlterarNota.UseVisualStyleBackColor = true;
+            this.btnAlterarNota.Click += new System.EventHandler(this.btnAlterarNota_Click);
+            // 
+            // lblSelecao
+            // 
+            this.lblSelecao.AutoSize = true;
+            this.lblSelecao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelecao.Location = new System.Drawing.Point(3, 26);
+            this.lblSelecao.Name = "lblSelecao";
+            this.lblSelecao.Size = new System.Drawing.Size(226, 28);
+            this.lblSelecao.TabIndex = 42;
+            this.lblSelecao.Text = "Seleção de item da nota:";
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(22, 108);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(97, 37);
+            this.btnSelecionar.TabIndex = 41;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // numeric
+            // 
+            this.numeric.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numeric.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeric.Location = new System.Drawing.Point(234, 34);
+            this.numeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numeric.Name = "numeric";
+            this.numeric.ReadOnly = true;
+            this.numeric.Size = new System.Drawing.Size(44, 30);
+            this.numeric.TabIndex = 0;
+            this.numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numeric.ValueChanged += new System.EventHandler(this.numeric_ValueChanged);
+            // 
+            // groupBoxItem
+            // 
+            this.groupBoxItem.Controls.Add(this.txtBoxDesc);
+            this.groupBoxItem.Controls.Add(this.label10);
+            this.groupBoxItem.Controls.Add(this.txtBoxValor);
+            this.groupBoxItem.Controls.Add(this.label8);
+            this.groupBoxItem.Controls.Add(this.lblValor);
+            this.groupBoxItem.Controls.Add(this.txtBoxValorPago);
+            this.groupBoxItem.Controls.Add(this.comboBoxQt);
+            this.groupBoxItem.Controls.Add(this.comboBoxTipo);
+            this.groupBoxItem.Controls.Add(this.lblQt);
+            this.groupBoxItem.Controls.Add(this.lblItem);
+            this.groupBoxItem.Controls.Add(this.lblDesc);
+            this.groupBoxItem.Controls.Add(this.txtBoxItem);
+            this.groupBoxItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxItem.Location = new System.Drawing.Point(24, 6);
+            this.groupBoxItem.Name = "groupBoxItem";
+            this.groupBoxItem.Size = new System.Drawing.Size(403, 385);
+            this.groupBoxItem.TabIndex = 39;
+            this.groupBoxItem.TabStop = false;
+            this.groupBoxItem.Text = "Adiciona item";
+            // 
+            // txtBoxDesc
+            // 
+            this.txtBoxDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDesc.Location = new System.Drawing.Point(29, 180);
+            this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.Size = new System.Drawing.Size(299, 102);
+            this.txtBoxDesc.TabIndex = 7;
+            this.txtBoxDesc.Text = "";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(41, 337);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(34, 293);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(185, 23);
+            this.label10.Size = new System.Drawing.Size(188, 28);
             this.label10.TabIndex = 38;
             this.label10.Text = "Tipo de pagamento:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(41, 379);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 23);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Total pago:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // picBoxSalvar
-            // 
-            this.picBoxSalvar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.picBoxSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxSalvar.Image = global::Braga.Properties.Resources.botao_salvar1;
-            this.picBoxSalvar.Location = new System.Drawing.Point(185, 483);
-            this.picBoxSalvar.Name = "picBoxSalvar";
-            this.picBoxSalvar.Size = new System.Drawing.Size(80, 80);
-            this.picBoxSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxSalvar.TabIndex = 35;
-            this.picBoxSalvar.TabStop = false;
-            this.picBoxSalvar.Click += new System.EventHandler(this.picBoxSalvar_Click);
-            // 
-            // lblSalvar
-            // 
-            this.lblSalvar.AutoSize = true;
-            this.lblSalvar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblSalvar.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSalvar.Location = new System.Drawing.Point(189, 571);
-            this.lblSalvar.Name = "lblSalvar";
-            this.lblSalvar.Size = new System.Drawing.Size(76, 26);
-            this.lblSalvar.TabIndex = 36;
-            this.lblSalvar.Text = "Salvar";
-            // 
-            // txtBoxValorPago
-            // 
-            this.txtBoxValorPago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtBoxValorPago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtBoxValorPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxValorPago.Location = new System.Drawing.Point(165, 378);
-            this.txtBoxValorPago.Margin = new System.Windows.Forms.Padding(5);
-            this.txtBoxValorPago.Name = "txtBoxValorPago";
-            this.txtBoxValorPago.Size = new System.Drawing.Size(199, 30);
-            this.txtBoxValorPago.TabIndex = 31;
-            this.txtBoxValorPago.Leave += new System.EventHandler(this.txtBoxValorPago_Leave);
-            // 
-            // comboBoxTipo
-            // 
-            this.comboBoxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Location = new System.Drawing.Point(241, 337);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(123, 33);
-            this.comboBoxTipo.TabIndex = 32;
-            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_SelectedIndexChanged);
-            this.comboBoxTipo.Click += new System.EventHandler(this.comboBoxTipo_Click);
-            // 
-            // lblItem
-            // 
-            this.lblItem.AutoSize = true;
-            this.lblItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItem.Location = new System.Drawing.Point(107, 30);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(55, 23);
-            this.lblItem.TabIndex = 16;
-            this.lblItem.Text = "Item:";
-            this.lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBoxItem
-            // 
-            this.txtBoxItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtBoxItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtBoxItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxItem.Location = new System.Drawing.Point(174, 29);
-            this.txtBoxItem.Margin = new System.Windows.Forms.Padding(5);
-            this.txtBoxItem.Name = "txtBoxItem";
-            this.txtBoxItem.Size = new System.Drawing.Size(229, 30);
-            this.txtBoxItem.TabIndex = 4;
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDesc.Location = new System.Drawing.Point(62, 144);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(104, 23);
-            this.lblDesc.TabIndex = 20;
-            this.lblDesc.Text = "Descrição:";
-            this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQt
-            // 
-            this.lblQt.AutoSize = true;
-            this.lblQt.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblQt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQt.Location = new System.Drawing.Point(32, 108);
-            this.lblQt.Margin = new System.Windows.Forms.Padding(0);
-            this.lblQt.Name = "lblQt";
-            this.lblQt.Size = new System.Drawing.Size(117, 23);
-            this.lblQt.TabIndex = 22;
-            this.lblQt.Text = "Quantidade:";
-            this.lblQt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBoxQt
-            // 
-            this.comboBoxQt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxQt.FormattingEnabled = true;
-            this.comboBoxQt.Location = new System.Drawing.Point(174, 105);
-            this.comboBoxQt.Name = "comboBoxQt";
-            this.comboBoxQt.Size = new System.Drawing.Size(77, 31);
-            this.comboBoxQt.TabIndex = 6;
-            this.comboBoxQt.Click += new System.EventHandler(this.comboBoxQt_Click);
-            // 
-            // txtBoxDesc
-            // 
-            this.txtBoxDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDesc.Location = new System.Drawing.Point(45, 182);
-            this.txtBoxDesc.Name = "txtBoxDesc";
-            this.txtBoxDesc.Size = new System.Drawing.Size(360, 147);
-            this.txtBoxDesc.TabIndex = 7;
-            this.txtBoxDesc.Text = "";
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(103, 66);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(61, 23);
-            this.lblValor.TabIndex = 18;
-            this.lblValor.Text = "Valor:";
-            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBoxValor
             // 
             this.txtBoxValor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBoxValor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtBoxValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxValor.Location = new System.Drawing.Point(174, 64);
+            this.txtBoxValor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxValor.Location = new System.Drawing.Point(164, 69);
             this.txtBoxValor.Margin = new System.Windows.Forms.Padding(5);
             this.txtBoxValor.Name = "txtBoxValor";
-            this.txtBoxValor.Size = new System.Drawing.Size(102, 30);
+            this.txtBoxValor.Size = new System.Drawing.Size(102, 34);
             this.txtBoxValor.TabIndex = 5;
             // 
-            // lblFinalizar
+            // label8
             // 
-            this.lblFinalizar.AutoSize = true;
-            this.lblFinalizar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFinalizar.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinalizar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFinalizar.Location = new System.Drawing.Point(397, 871);
-            this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(103, 26);
-            this.lblFinalizar.TabIndex = 24;
-            this.lblFinalizar.Text = "Finalizar ";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(113, 333);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 28);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Total pago:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // picBoxFinalizar
+            // lblValor
             // 
-            this.picBoxFinalizar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.picBoxFinalizar.Image = global::Braga.Properties.Resources.completion;
-            this.picBoxFinalizar.Location = new System.Drawing.Point(402, 777);
-            this.picBoxFinalizar.Name = "picBoxFinalizar";
-            this.picBoxFinalizar.Size = new System.Drawing.Size(80, 80);
-            this.picBoxFinalizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxFinalizar.TabIndex = 23;
-            this.picBoxFinalizar.TabStop = false;
-            this.picBoxFinalizar.Click += new System.EventHandler(this.picBoxFinalizar_Click);
+            this.lblValor.AutoSize = true;
+            this.lblValor.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblValor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(22, 72);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(134, 28);
+            this.lblValor.TabIndex = 18;
+            this.lblValor.Text = "Valor do item:";
+            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBoxValorPago
+            // 
+            this.txtBoxValorPago.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxValorPago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBoxValorPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxValorPago.Location = new System.Drawing.Point(234, 333);
+            this.txtBoxValorPago.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxValorPago.Name = "txtBoxValorPago";
+            this.txtBoxValorPago.Size = new System.Drawing.Size(105, 34);
+            this.txtBoxValorPago.TabIndex = 31;
+            this.txtBoxValorPago.Leave += new System.EventHandler(this.txtBoxValorPago_Leave);
+            // 
+            // comboBoxQt
+            // 
+            this.comboBoxQt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxQt.FormattingEnabled = true;
+            this.comboBoxQt.Location = new System.Drawing.Point(164, 109);
+            this.comboBoxQt.Name = "comboBoxQt";
+            this.comboBoxQt.Size = new System.Drawing.Size(77, 36);
+            this.comboBoxQt.TabIndex = 6;
+            this.comboBoxQt.Click += new System.EventHandler(this.comboBoxQt_Click);
+            // 
+            // comboBoxTipo
+            // 
+            this.comboBoxTipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipo.FormattingEnabled = true;
+            this.comboBoxTipo.Location = new System.Drawing.Point(234, 289);
+            this.comboBoxTipo.Name = "comboBoxTipo";
+            this.comboBoxTipo.Size = new System.Drawing.Size(129, 36);
+            this.comboBoxTipo.TabIndex = 32;
+            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_SelectedIndexChanged);
+            this.comboBoxTipo.Click += new System.EventHandler(this.comboBoxTipo_Click);
+            // 
+            // lblQt
+            // 
+            this.lblQt.AutoSize = true;
+            this.lblQt.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblQt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQt.Location = new System.Drawing.Point(37, 112);
+            this.lblQt.Margin = new System.Windows.Forms.Padding(0);
+            this.lblQt.Name = "lblQt";
+            this.lblQt.Size = new System.Drawing.Size(119, 28);
+            this.lblQt.TabIndex = 22;
+            this.lblQt.Text = "Quantidade:";
+            this.lblQt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblItem
+            // 
+            this.lblItem.AutoSize = true;
+            this.lblItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItem.Location = new System.Drawing.Point(101, 34);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(55, 28);
+            this.lblItem.TabIndex = 16;
+            this.lblItem.Text = "Item:";
+            this.lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDesc.Location = new System.Drawing.Point(21, 148);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(100, 28);
+            this.lblDesc.TabIndex = 20;
+            this.lblDesc.Text = "Descrição:";
+            this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBoxItem
+            // 
+            this.txtBoxItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBoxItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxItem.Location = new System.Drawing.Point(164, 31);
+            this.txtBoxItem.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxItem.Name = "txtBoxItem";
+            this.txtBoxItem.Size = new System.Drawing.Size(213, 34);
+            this.txtBoxItem.TabIndex = 4;
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Arial Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(516, 54);
@@ -599,28 +574,6 @@
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label11.Visible = false;
             // 
-            // lblProp
-            // 
-            this.lblProp.AutoSize = true;
-            this.lblProp.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblProp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProp.Location = new System.Drawing.Point(652, 555);
-            this.lblProp.Name = "lblProp";
-            this.lblProp.Size = new System.Drawing.Size(103, 17);
-            this.lblProp.TabIndex = 17;
-            this.lblProp.Text = "Configurações";
-            // 
-            // lblFechar
-            // 
-            this.lblFechar.AutoSize = true;
-            this.lblFechar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblFechar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechar.Location = new System.Drawing.Point(800, 556);
-            this.lblFechar.Name = "lblFechar";
-            this.lblFechar.Size = new System.Drawing.Size(54, 17);
-            this.lblFechar.TabIndex = 19;
-            this.lblFechar.Text = "Fechar";
-            // 
             // axAcroPDF2
             // 
             this.axAcroPDF2.Enabled = true;
@@ -629,18 +582,6 @@
             this.axAcroPDF2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF2.OcxState")));
             this.axAcroPDF2.Size = new System.Drawing.Size(240, 240);
             this.axAcroPDF2.TabIndex = 31;
-            // 
-            // lblRebot
-            // 
-            this.lblRebot.AutoSize = true;
-            this.lblRebot.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblRebot.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRebot.Location = new System.Drawing.Point(792, 584);
-            this.lblRebot.Name = "lblRebot";
-            this.lblRebot.Size = new System.Drawing.Size(82, 17);
-            this.lblRebot.TabIndex = 30;
-            this.lblRebot.Text = "Recarregar";
-            this.lblRebot.Visible = false;
             // 
             // btnFantasmaRegistro
             // 
@@ -651,46 +592,6 @@
             this.btnFantasmaRegistro.Text = "button1";
             this.btnFantasmaRegistro.UseVisualStyleBackColor = true;
             this.btnFantasmaRegistro.Click += new System.EventHandler(this.btnFantasmaRegistro_Click);
-            // 
-            // picBoxRebot
-            // 
-            this.picBoxRebot.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picBoxRebot.Image = global::Braga.Properties.Resources.restart;
-            this.picBoxRebot.Location = new System.Drawing.Point(920, 473);
-            this.picBoxRebot.Name = "picBoxRebot";
-            this.picBoxRebot.Size = new System.Drawing.Size(65, 65);
-            this.picBoxRebot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxRebot.TabIndex = 29;
-            this.picBoxRebot.TabStop = false;
-            this.picBoxRebot.Visible = false;
-            this.picBoxRebot.Click += new System.EventHandler(this.picBoxRebot_Click);
-            this.picBoxRebot.DoubleClick += new System.EventHandler(this.picBoxRebot_DoubleClick);
-            // 
-            // picBoxFechar
-            // 
-            this.picBoxFechar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picBoxFechar.BackgroundImage = global::Braga.Properties.Resources.fechar;
-            this.picBoxFechar.Image = global::Braga.Properties.Resources.fechar;
-            this.picBoxFechar.Location = new System.Drawing.Point(798, 473);
-            this.picBoxFechar.Name = "picBoxFechar";
-            this.picBoxFechar.Size = new System.Drawing.Size(80, 80);
-            this.picBoxFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxFechar.TabIndex = 18;
-            this.picBoxFechar.TabStop = false;
-            this.picBoxFechar.Click += new System.EventHandler(this.picBoxFechar_Click);
-            this.picBoxFechar.DoubleClick += new System.EventHandler(this.picBoxFechar_DoubleClick);
-            // 
-            // picBoxProp
-            // 
-            this.picBoxProp.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picBoxProp.BackgroundImage = global::Braga.Properties.Resources.engrenagem;
-            this.picBoxProp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxProp.Location = new System.Drawing.Point(666, 473);
-            this.picBoxProp.Name = "picBoxProp";
-            this.picBoxProp.Size = new System.Drawing.Size(70, 70);
-            this.picBoxProp.TabIndex = 16;
-            this.picBoxProp.TabStop = false;
-            this.picBoxProp.Click += new System.EventHandler(this.picBoxProp_Click);
             // 
             // picBoxRodape
             // 
@@ -712,49 +613,106 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // picImpri
+            // btnRegistro
             // 
-            this.picImpri.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.picImpri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picImpri.Image = global::Braga.Properties.Resources.impressora;
-            this.picImpri.Location = new System.Drawing.Point(808, 649);
-            this.picImpri.Name = "picImpri";
-            this.picImpri.Size = new System.Drawing.Size(70, 70);
-            this.picImpri.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImpri.TabIndex = 38;
-            this.picImpri.TabStop = false;
-            this.picImpri.Click += new System.EventHandler(this.picImpri_Click);
+            this.btnRegistro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Location = new System.Drawing.Point(568, 624);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(109, 43);
+            this.btnRegistro.TabIndex = 40;
+            this.btnRegistro.Text = "Registrar";
+            this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
-            // lblImpri
+            // btnSalvar
             // 
-            this.lblImpri.AutoSize = true;
-            this.lblImpri.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblImpri.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImpri.Location = new System.Drawing.Point(805, 732);
-            this.lblImpri.Name = "lblImpri";
-            this.lblImpri.Size = new System.Drawing.Size(77, 17);
-            this.lblImpri.TabIndex = 39;
-            this.lblImpri.Text = "Impressão";
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(568, 675);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(109, 43);
+            this.btnSalvar.TabIndex = 41;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(568, 731);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(109, 43);
+            this.btnFinalizar.TabIndex = 42;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.Location = new System.Drawing.Point(568, 876);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(109, 43);
+            this.btnConfig.TabIndex = 44;
+            this.btnConfig.Text = "Configurar";
+            this.btnConfig.UseVisualStyleBackColor = true;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.Location = new System.Drawing.Point(568, 925);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(109, 43);
+            this.btnFechar.TabIndex = 45;
+            this.btnFechar.Text = "Fechar(ESC)";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(568, 777);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(109, 43);
+            this.btnImprimir.TabIndex = 46;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // groupBoxCliente
+            // 
+            this.groupBoxCliente.Controls.Add(this.txtBoxNome);
+            this.groupBoxCliente.Controls.Add(this.lblAnuncio);
+            this.groupBoxCliente.Controls.Add(this.lblNome);
+            this.groupBoxCliente.Controls.Add(this.txtBoxEnd);
+            this.groupBoxCliente.Controls.Add(this.lblTel);
+            this.groupBoxCliente.Controls.Add(this.txtBoxDoc);
+            this.groupBoxCliente.Controls.Add(this.lblEnd);
+            this.groupBoxCliente.Controls.Add(this.txtBoxTel);
+            this.groupBoxCliente.Controls.Add(this.lblDoc);
+            this.groupBoxCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCliente.Location = new System.Drawing.Point(24, 6);
+            this.groupBoxCliente.Name = "groupBoxCliente";
+            this.groupBoxCliente.Size = new System.Drawing.Size(402, 588);
+            this.groupBoxCliente.TabIndex = 27;
+            this.groupBoxCliente.TabStop = false;
+            this.groupBoxCliente.Text = "Adiciona cliente";
             // 
             // FormPDV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.lblImpri);
-            this.Controls.Add(this.picImpri);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnFechar);
+            this.Controls.Add(this.btnConfig);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.axAcroPDF2);
-            this.Controls.Add(this.lblRebot);
-            this.Controls.Add(this.picBoxRebot);
-            this.Controls.Add(this.lblFechar);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.picBoxFechar);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.lblProp);
             this.Controls.Add(this.checkBoxFora);
             this.Controls.Add(this.checkBoxOficina);
-            this.Controls.Add(this.picBoxProp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.picBoxRodape);
             this.Controls.Add(this.groupBox1);
@@ -771,82 +729,77 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPDV_FormClosing);
             this.Load += new System.EventHandler(this.FormPDV_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormPDV_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormPDV_KeyPress);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRegistrar)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSalvar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFinalizar)).EndInit();
+            this.groupBoxControleItem.ResumeLayout(false);
+            this.groupBoxControleItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();
+            this.groupBoxItem.ResumeLayout(false);
+            this.groupBoxItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRebot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxFechar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxProp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRodape)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImpri)).EndInit();
+            this.groupBoxCliente.ResumeLayout(false);
+            this.groupBoxCliente.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtBoxNome;
-        private System.Windows.Forms.TextBox txtBoxTelefone;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelPdv;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBoxDoc;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBoxEnd;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox picBoxRodape;
-        private System.Windows.Forms.TextBox txtBoxItem;
-        private System.Windows.Forms.Label lblItem;
-        private System.Windows.Forms.TextBox txtBoxValor;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.PictureBox picBoxProp;
-        private System.Windows.Forms.Label lblProp;
-        private System.Windows.Forms.PictureBox picBoxFechar;
-        private System.Windows.Forms.Label lblFechar;
-        private System.Windows.Forms.PictureBox picBoxFinalizar;
-        private System.Windows.Forms.Label lblFinalizar;
-        private System.Windows.Forms.ComboBox comboBoxQt;
-        private System.Windows.Forms.Label lblQt;
-        private System.Windows.Forms.PictureBox picBoxRegistrar;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.RichTextBox txtBoxDesc;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private AxAcroPDFLib.AxAcroPDF axAcroPDF2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox checkBoxFora;
         private System.Windows.Forms.CheckBox checkBoxOficina;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtBoxValorPago;
-        private System.Windows.Forms.ComboBox comboBoxTipo;
-        private System.Windows.Forms.PictureBox picBoxSalvar;
-        private System.Windows.Forms.Label lblSalvar;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblAnuncio;
-        private System.Windows.Forms.PictureBox picBoxRebot;
-        private System.Windows.Forms.Label lblRebot;
         private System.Windows.Forms.Button btnFantasmaRegistro;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox picImpri;
-        private System.Windows.Forms.Label lblImpri;
+        private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnConfig;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label lblAnuncio;
+        private System.Windows.Forms.TextBox txtBoxEnd;
+        private System.Windows.Forms.TextBox txtBoxDoc;
+        private System.Windows.Forms.TextBox txtBoxTel;
+        private System.Windows.Forms.TextBox txtBoxNome;
+        private System.Windows.Forms.Label lblDoc;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBoxControleItem;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnAlterarNota;
+        private System.Windows.Forms.Label lblSelecao;
+        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.NumericUpDown numeric;
+        private System.Windows.Forms.GroupBox groupBoxItem;
+        private System.Windows.Forms.RichTextBox txtBoxDesc;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtBoxValor;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.TextBox txtBoxValorPago;
+        private System.Windows.Forms.ComboBox comboBoxQt;
+        private System.Windows.Forms.ComboBox comboBoxTipo;
+        private System.Windows.Forms.Label lblQt;
+        private System.Windows.Forms.Label lblItem;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.TextBox txtBoxItem;
+        private System.Windows.Forms.GroupBox groupBoxCliente;
     }
 }

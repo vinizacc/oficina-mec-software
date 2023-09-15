@@ -106,11 +106,11 @@ namespace Servico1
                 MySqlConnection connection = new MySqlConnection(connectionString);
 
                 connection.Open();
-                String searchPhrase = "%" + searchTerm + "%";
 
                 // coleção de sql para reunir usuarios
                 MySqlCommand command = new MySqlCommand();
                 command.CommandText = "SELECT * FROM PESSOA_FISICA WHERE NOME LIKE @search";
+                String searchPhrase = searchTerm + "%";
                 command.Parameters.AddWithValue("@search", searchPhrase);
                 command.Connection = connection;
 
@@ -150,12 +150,12 @@ namespace Servico1
                 MySqlConnection connection = new MySqlConnection(connectionString);
 
                 connection.Open();
-                //String searchPhrase = "%" + searchTerm + "%";
+                String searchPhrase = "%" + searchTerm + "%";
 
                 // coleção de sql para reunir usuarios
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = "SELECT * FROM PESSOA_FISICA WHERE DOC_PESSOAL = @search";
-                command.Parameters.AddWithValue("@search", searchTerm);
+                command.CommandText = "SELECT * FROM PESSOA_FISICA WHERE DOC_PESSOAL LIKE @search";
+                command.Parameters.AddWithValue("@search", searchPhrase);
                 command.Connection = connection;
 
                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -606,6 +606,50 @@ namespace Servico1
             command.ExecuteReader();
 
             connection.Close();
+        }
+
+        internal object procurarClientePeloTelRetornaLista(string searchTerm)
+        {
+            // começamos com a criação de uma lista 
+            List<Clientes> clientes = new List<Clientes>();
+
+            if (searchTerm != null && searchTerm != "")
+            {
+                // conectando com o servidor SQL
+                MySqlConnection connection = new MySqlConnection(connectionString);
+
+                connection.Open();
+                String searchPhrase = "%" + searchTerm + "%";
+
+                // coleção de sql para reunir usuarios
+                MySqlCommand command = new MySqlCommand();
+                command.CommandText = "SELECT * FROM PESSOA_FISICA WHERE CELULAR LIKE @search";
+                command.Parameters.AddWithValue("@search", searchPhrase);
+                command.Connection = connection;
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Clientes a = new Clientes
+                        {
+                            ID_PF = reader.GetInt32(0),
+                            NOME = reader.GetString(1),
+                            ENDERECO = reader.GetString(2),
+                            CELULAR = reader.GetString(3),
+                            DT_CADASTRO = reader.GetString(4),
+                            DOC_PESSOAL = reader.GetString(5),
+                            DESCRICAO = reader.GetString(6),
+                            N_NF = reader.GetInt32(7)
+                        };
+                        clientes.Add(a);
+                    }
+                }
+                connection.Close();
+
+            }
+
+            return clientes;
         }
     }
 }
