@@ -34,15 +34,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblAnuncio = new System.Windows.Forms.Label();
-            this.txtBoxEnd = new System.Windows.Forms.TextBox();
-            this.txtBoxDoc = new System.Windows.Forms.TextBox();
-            this.txtBoxTel = new System.Windows.Forms.TextBox();
+            this.groupBoxCliente = new System.Windows.Forms.GroupBox();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
-            this.lblDoc = new System.Windows.Forms.Label();
-            this.lblEnd = new System.Windows.Forms.Label();
-            this.lblTel = new System.Windows.Forms.Label();
+            this.lblAnuncio = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.txtBoxEnd = new System.Windows.Forms.TextBox();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.txtBoxDoc = new System.Windows.Forms.TextBox();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.txtBoxTel = new System.Windows.Forms.TextBox();
+            this.lblDoc = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBoxControleItem = new System.Windows.Forms.GroupBox();
             this.btnApagar = new System.Windows.Forms.Button();
@@ -76,13 +77,12 @@
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnConfig = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.groupBoxCliente = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBoxCliente.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBoxControleItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
@@ -90,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRodape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBoxCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPdv
@@ -142,45 +141,24 @@
             this.tabPage1.Text = "Cliente";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // lblAnuncio
+            // groupBoxCliente
             // 
-            this.lblAnuncio.BackColor = System.Drawing.Color.White;
-            this.lblAnuncio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnuncio.Location = new System.Drawing.Point(15, 217);
-            this.lblAnuncio.Name = "lblAnuncio";
-            this.lblAnuncio.Size = new System.Drawing.Size(355, 78);
-            this.lblAnuncio.TabIndex = 26;
-            this.lblAnuncio.Text = "Anuncio:";
-            this.lblAnuncio.Click += new System.EventHandler(this.lblAnuncio_Click);
-            // 
-            // txtBoxEnd
-            // 
-            this.txtBoxEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEnd.Location = new System.Drawing.Point(145, 155);
-            this.txtBoxEnd.Name = "txtBoxEnd";
-            this.txtBoxEnd.Size = new System.Drawing.Size(201, 34);
-            this.txtBoxEnd.TabIndex = 3;
-            this.txtBoxEnd.Click += new System.EventHandler(this.txtBoxEnd_Click);
-            // 
-            // txtBoxDoc
-            // 
-            this.txtBoxDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDoc.Location = new System.Drawing.Point(145, 115);
-            this.txtBoxDoc.Name = "txtBoxDoc";
-            this.txtBoxDoc.Size = new System.Drawing.Size(201, 34);
-            this.txtBoxDoc.TabIndex = 2;
-            this.txtBoxDoc.Click += new System.EventHandler(this.txtBoxDoc_Click);
-            // 
-            // txtBoxTel
-            // 
-            this.txtBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTel.Location = new System.Drawing.Point(145, 74);
-            this.txtBoxTel.Name = "txtBoxTel";
-            this.txtBoxTel.Size = new System.Drawing.Size(201, 34);
-            this.txtBoxTel.TabIndex = 1;
-            this.txtBoxTel.Click += new System.EventHandler(this.txtBoxTelefone_Click);
-            this.txtBoxTel.TextChanged += new System.EventHandler(this.txtBoxTelefone_TextChanged);
-            this.txtBoxTel.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.groupBoxCliente.Controls.Add(this.txtBoxNome);
+            this.groupBoxCliente.Controls.Add(this.lblAnuncio);
+            this.groupBoxCliente.Controls.Add(this.lblNome);
+            this.groupBoxCliente.Controls.Add(this.txtBoxEnd);
+            this.groupBoxCliente.Controls.Add(this.lblTel);
+            this.groupBoxCliente.Controls.Add(this.txtBoxDoc);
+            this.groupBoxCliente.Controls.Add(this.lblEnd);
+            this.groupBoxCliente.Controls.Add(this.txtBoxTel);
+            this.groupBoxCliente.Controls.Add(this.lblDoc);
+            this.groupBoxCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCliente.Location = new System.Drawing.Point(24, 6);
+            this.groupBoxCliente.Name = "groupBoxCliente";
+            this.groupBoxCliente.Size = new System.Drawing.Size(402, 588);
+            this.groupBoxCliente.TabIndex = 27;
+            this.groupBoxCliente.TabStop = false;
+            this.groupBoxCliente.Text = "Adiciona cliente";
             // 
             // txtBoxNome
             // 
@@ -198,29 +176,37 @@
             this.txtBoxNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.txtBoxNome.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // lblDoc
+            // lblAnuncio
             // 
-            this.lblDoc.AutoSize = true;
-            this.lblDoc.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoc.Location = new System.Drawing.Point(23, 118);
-            this.lblDoc.Name = "lblDoc";
-            this.lblDoc.Size = new System.Drawing.Size(119, 28);
-            this.lblDoc.TabIndex = 7;
-            this.lblDoc.Text = "Documento:";
-            this.lblDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAnuncio.BackColor = System.Drawing.Color.White;
+            this.lblAnuncio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnuncio.Location = new System.Drawing.Point(15, 217);
+            this.lblAnuncio.Name = "lblAnuncio";
+            this.lblAnuncio.Size = new System.Drawing.Size(355, 78);
+            this.lblAnuncio.TabIndex = 26;
+            this.lblAnuncio.Text = "Anuncio:";
+            this.lblAnuncio.Click += new System.EventHandler(this.lblAnuncio_Click);
             // 
-            // lblEnd
+            // lblNome
             // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnd.Location = new System.Drawing.Point(42, 158);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(97, 28);
-            this.lblEnd.TabIndex = 9;
-            this.lblEnd.Text = "Endereço:";
-            this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(70, 34);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(70, 28);
+            this.lblNome.TabIndex = 5;
+            this.lblNome.Text = "Nome:";
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBoxEnd
+            // 
+            this.txtBoxEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEnd.Location = new System.Drawing.Point(145, 155);
+            this.txtBoxEnd.Name = "txtBoxEnd";
+            this.txtBoxEnd.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxEnd.TabIndex = 3;
+            this.txtBoxEnd.Click += new System.EventHandler(this.txtBoxEnd_Click);
             // 
             // lblTel
             // 
@@ -234,17 +220,49 @@
             this.lblTel.Text = "Telefone:";
             this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNome
+            // txtBoxDoc
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(70, 34);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(70, 28);
-            this.lblNome.TabIndex = 5;
-            this.lblNome.Text = "Nome:";
-            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtBoxDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDoc.Location = new System.Drawing.Point(145, 115);
+            this.txtBoxDoc.Name = "txtBoxDoc";
+            this.txtBoxDoc.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxDoc.TabIndex = 2;
+            this.txtBoxDoc.Click += new System.EventHandler(this.txtBoxDoc_Click);
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Location = new System.Drawing.Point(42, 158);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(97, 28);
+            this.lblEnd.TabIndex = 9;
+            this.lblEnd.Text = "Endereço:";
+            this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBoxTel
+            // 
+            this.txtBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTel.Location = new System.Drawing.Point(145, 74);
+            this.txtBoxTel.Name = "txtBoxTel";
+            this.txtBoxTel.Size = new System.Drawing.Size(201, 34);
+            this.txtBoxTel.TabIndex = 1;
+            this.txtBoxTel.Click += new System.EventHandler(this.txtBoxTelefone_Click);
+            this.txtBoxTel.TextChanged += new System.EventHandler(this.txtBoxTelefone_TextChanged);
+            this.txtBoxTel.Leave += new System.EventHandler(this.textBox2_Leave);
+            // 
+            // lblDoc
+            // 
+            this.lblDoc.AutoSize = true;
+            this.lblDoc.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblDoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoc.Location = new System.Drawing.Point(23, 118);
+            this.lblDoc.Name = "lblDoc";
+            this.lblDoc.Size = new System.Drawing.Size(119, 28);
+            this.lblDoc.TabIndex = 7;
+            this.lblDoc.Text = "Documento:";
+            this.lblDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
@@ -646,16 +664,6 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // btnConfig
-            // 
-            this.btnConfig.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Location = new System.Drawing.Point(568, 876);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(109, 43);
-            this.btnConfig.TabIndex = 44;
-            this.btnConfig.Text = "Configurar";
-            this.btnConfig.UseVisualStyleBackColor = true;
-            // 
             // btnFechar
             // 
             this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -678,25 +686,6 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // groupBoxCliente
-            // 
-            this.groupBoxCliente.Controls.Add(this.txtBoxNome);
-            this.groupBoxCliente.Controls.Add(this.lblAnuncio);
-            this.groupBoxCliente.Controls.Add(this.lblNome);
-            this.groupBoxCliente.Controls.Add(this.txtBoxEnd);
-            this.groupBoxCliente.Controls.Add(this.lblTel);
-            this.groupBoxCliente.Controls.Add(this.txtBoxDoc);
-            this.groupBoxCliente.Controls.Add(this.lblEnd);
-            this.groupBoxCliente.Controls.Add(this.txtBoxTel);
-            this.groupBoxCliente.Controls.Add(this.lblDoc);
-            this.groupBoxCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCliente.Location = new System.Drawing.Point(24, 6);
-            this.groupBoxCliente.Name = "groupBoxCliente";
-            this.groupBoxCliente.Size = new System.Drawing.Size(402, 588);
-            this.groupBoxCliente.TabIndex = 27;
-            this.groupBoxCliente.TabStop = false;
-            this.groupBoxCliente.Text = "Adiciona cliente";
-            // 
             // FormPDV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -704,7 +693,6 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnRegistro);
@@ -734,6 +722,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBoxCliente.ResumeLayout(false);
+            this.groupBoxCliente.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBoxControleItem.ResumeLayout(false);
             this.groupBoxControleItem.PerformLayout();
@@ -743,8 +733,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRodape)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBoxCliente.ResumeLayout(false);
-            this.groupBoxCliente.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -766,7 +754,6 @@
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TabControl tabControl1;
