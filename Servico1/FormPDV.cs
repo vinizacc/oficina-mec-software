@@ -955,7 +955,7 @@ namespace Servico1
 
         private void numeric_ValueChanged(object sender, EventArgs e)
         {
-            lblSelecao.Text = numeric.Value.ToString();
+            //lblSelecao.Text = numeric.Value.ToString();
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
@@ -973,28 +973,39 @@ namespace Servico1
             }
         }
 
+        public bool verificaCampos()
+        {
+            if(txtBoxItem.Text != "" && txtBoxValor.Text != "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+
         private void btnAlterarNota_Click(object sender, EventArgs e)
         {
-            if ((numeric.Value - 1) >= 0 && (numeric.Value - 1) < lI.Count)
+            if (verificaCampos())
             {
-                int indice = Convert.ToInt16(numeric.Value - 1);
-                ListaItem l = new ListaItem();
-                l = lI[indice];
-                l.item = txtBoxItem.Text;
-                l.valorItem = txtBoxValor.Text;
-                l.qt = comboBoxQt.Text;
-                l.desc = txtBoxDesc.Text;
+                if ((numeric.Value - 1) >= 0 && (numeric.Value - 1) < lI.Count)
+                {
+                    int indice = Convert.ToInt16(numeric.Value - 1);
+                    ListaItem l = new ListaItem();
+                    l = lI[indice];
+                    l.item = txtBoxItem.Text;
+                    l.valorItem = txtBoxValor.Text;
+                    l.qt = comboBoxQt.Text;
+                    l.desc = txtBoxDesc.Text;
 
-                listaDados[indice][0, 0] = txtBoxItem.Text;
-                listaDados[indice][0, 1] = txtBoxDesc.Text;
-                listaDados[indice][0, 2] = comboBoxQt.Text;
-                listaDados[indice][0, 3] = txtBoxValor.Text;
+                    listaDados[indice][0, 0] = txtBoxItem.Text;
+                    listaDados[indice][0, 1] = txtBoxDesc.Text;
+                    listaDados[indice][0, 2] = comboBoxQt.Text;
+                    listaDados[indice][0, 3] = txtBoxValor.Text;
 
-                pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", txtBoxValorPago.Text);
-                log.registrar("Atualizou o pdf.");
-                axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
-
-                MessageBox.Show(l.item + "" + l.valorItem + "" + l.qt + "" + l.desc);
+                    pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", txtBoxValorPago.Text);
+                    log.registrar("Atualizou o pdf.");
+                    axAcroPDF2.src = folder.absolutePathOfPdf(filePathAndName);
+                }
             }
         }
 
@@ -1004,7 +1015,7 @@ namespace Servico1
             {
                 int indice = Convert.ToInt16(numeric.Value - 1);
                 lI.RemoveAt(indice);
-                MessageBox.Show("Removido");
+                
 
                 listaDados.RemoveAt(indice);
                 pdf.atualizaTabela(filePathAndName, listaDados, "0", "0", txtBoxValorPago.Text);

@@ -216,7 +216,7 @@ namespace Servico1
                     ServicosDAO sDAO = new ServicosDAO();
                     try
                     {
-                        MessageBox.Show("Nota: " + idNotaParaDeletar + "\nCliente: " + idAtual);
+                        //MessageBox.Show("Nota: " + idNotaParaDeletar + "\nCliente: " + idAtual);
                         sDAO.reativarNota(idNotaParaDeletar);
                         dataGridViewAltera.Rows.RemoveAt(dataGridViewAltera.CurrentRow.Index);
                     }
@@ -241,7 +241,7 @@ namespace Servico1
                     ServicosDAO sD = new ServicosDAO();
                     try
                     {
-                        MessageBox.Show("Nota: "+idNotaParaDeletar +"\nCliente: " + idAtual);
+                        //MessageBox.Show("Nota: "+idNotaParaDeletar +"\nCliente: " + idAtual);
                         sD.ocultaNota(Convert.ToInt32(idNotaParaDeletar));
                         dataGridViewAltera.Rows.RemoveAt(dataGridViewAltera.CurrentRow.Index);
                     
@@ -298,7 +298,7 @@ namespace Servico1
                 if (row.Cells[0].Value != null)
                 {
                     idNotaParaDeletar = row.Cells[5].Value.ToString();
-                    MessageBox.Show("Selection Changed id: " +idNotaParaDeletar);
+                    //MessageBox.Show("Selection Changed id: " +idNotaParaDeletar);
                 }
             }
         }

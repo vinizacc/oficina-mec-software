@@ -1,0 +1,83 @@
+Log do arquivo - 15-09-2023 19-24-00
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 15-09-2023 19-24-00
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Botão CONTROLE CLIENTES foi clicado.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão CADASTRO CLIENTE foi clicado.
+
+----------------------------------
+O formulário Cadastro de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+Botão CLIENTE DEVEDOR clicado.
+
+----------------------------------
+Abrindo o formulário Cliente devedor
+----------------------------------
+
+Privilégio adm
+
+----------------------------------
+
+O botão Notas vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------
+O formulário Controle de clientes foi aberto.
+----------------------------------
+
+
+----------------------------------
+
+O botão Acesso vendas foi clicado. 
+ O formulário vai ser aberto.
+
+----------------------------------
+
+Botão VENDAS POR PERIODO clicado.
+
+----------------------------------
+O formulário Vendas Por Periodo foi aberto
+----------------------------------
+
+Formulário configurou todos controles
+---Botão PESQUISAR foi clicado---
+Tipo de intervalo: Mensal
+Datas selecionadas
+Mês - Ano inicial: Não informado\2022
+Mês - Ano final: Não informado\2023
+Tipo pagamento: Qualquer tipo de pagamento
+Status pagamento: Qualquer status de pagamento
+Estilo gráfico: Coluna
+
+----------------------------------
