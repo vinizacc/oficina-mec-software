@@ -119,25 +119,28 @@ namespace Servico1
             btnArquivo.Size = new System.Drawing.Size(100, 35);
             btnArquivo.Location = new System.Drawing.Point(btnImprimir.Location.X + 10 + btnImprimir.Width, btnAbrir.Location.Y);
 
-            int afastador = 15;
-            label2.Location = new System.Drawing.Point(groupBox3.Location.X + 70, label2.Height + label2.Height / 2);
-            txtProcuraNome.Size = new System.Drawing.Size(248, 38);
-            txtProcuraNome.Location = new System.Drawing.Point(label2.Location.X + label2.Width, label2.Location.Y);
-            label3.Location = new System.Drawing.Point(label2.Location.X, label2.Location.Y + label2.Height + afastador);
-            comboBox.Location = new System.Drawing.Point(label3.Location.X + label3.Width, label3.Location.Y);
-            label4.Location = new System.Drawing.Point(label3.Location.X, label3.Location.Y + label3.Height + afastador);
-            dateTimePicker.Location = new System.Drawing.Point(label4.Location.X + label4.Width, label4.Location.Y);
-            label5.Location = new System.Drawing.Point(label4.Location.X, label4.Location.Y + label4.Height + afastador);
+            int afastador = 20;
+            lblNome.Location = new System.Drawing.Point(15, lblNome.Height + lblNome.Height / 2);
+            txtProcuraNome.Location = new System.Drawing.Point(lblNome.Location.X + lblNome.Width, lblNome.Location.Y);
+            
+            lblTipoPag.Location = new System.Drawing.Point(lblNome.Location.X, lblNome.Location.Y + lblNome.Height + afastador);
+            comboBox.Location = new System.Drawing.Point(lblTipoPag.Location.X + lblTipoPag.Width, lblTipoPag.Location.Y);
+            lblData.Location = new System.Drawing.Point(lblTipoPag.Location.X, lblTipoPag.Location.Y + lblTipoPag.Height + afastador);
+            dateTimePicker.Location = new System.Drawing.Point(lblData.Location.X + lblData.Width, lblData.Location.Y);
+            label5.Location = new System.Drawing.Point(lblData.Location.X, lblData.Location.Y + lblData.Height + afastador);
             lblDatas.Location = new System.Drawing.Point(label5.Location.X + label5.Width, label5.Location.Y);
             lblNomeArq.Location = new System.Drawing.Point(label5.Location.X, label5.Location.Y + label5.Height + 10);
             lblNomeArq.Text = "Arquivo da nota:";
 
-            btnPagou.Location = new System.Drawing.Point(groupBox3.Width / 2 + 100, lblDatas.Location.Y - 5);
-            btnPagou.Size = new System.Drawing.Size(130, 45);
-            btnTodos.Location = new System.Drawing.Point(groupBox3.Width / 2 + 100, btnPagou.Location.Y - btnPagou.Height - afastador);
-            btnTodos.Size = new System.Drawing.Size(130, 45);
-            btnProcurar.Location = new System.Drawing.Point(groupBox3.Width / 2 + 100, btnTodos.Location.Y - btnTodos.Height - afastador);
-            btnProcurar.Size = new System.Drawing.Size(130, 45);
+            
+            int btnPagouY = lblNomeArq.Location.Y;
+            int btnPagouX = groupBox3.Width - btnPagou.Width - 15;
+            int btnTodosX = btnPagouX - btnPagou.Width - 15;
+            int btnProcurarX = btnTodosX - btnPagou.Width - 15;
+
+            btnPagou.Location = new System.Drawing.Point(btnPagouX, btnPagouY);
+            btnTodos.Location = new System.Drawing.Point(btnTodosX , btnPagouY);
+            btnProcurar.Location = new System.Drawing.Point(btnProcurarX, btnPagouY);
         }
 
         BindingSource servicosBindingSource = new BindingSource();
@@ -576,6 +579,11 @@ namespace Servico1
         private void FormDevedorCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
             log.registrar(log.barra);
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

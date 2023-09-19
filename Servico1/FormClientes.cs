@@ -1,4 +1,5 @@
 ﻿using Braga;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -275,19 +276,25 @@ namespace Servico1
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
         {
-            log.registrar("Botão EXCLUIR foi clicado.");
-            DialogResult dialogResult = MessageBox.Show("Deseja deletar esse cliente?", "Deletar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            log.registrar("Cliente para exclusão: " + nomeAtual);
+            log.registrar("Botão OCULTAR foi clicado.");
+            DialogResult dialogResult = MessageBox.Show("Deseja ocultar esse cliente?\nTal operação não é definitiva.", "Deletar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            log.registrar("Cliente para ocultação: " + nomeAtual);
             if (dialogResult == DialogResult.Yes)
             {
                 ClientesDAO clientesDAO = new ClientesDAO();
-                if (clientesDAO.deleteCliente(idAtual))
+                ServicosDAO sDAO = new ServicosDAO();
+
+                try 
                 {
+                    sDAO.ocultaTodasNotasDoClientPeloId(Convert.ToInt16(idAtual));
                     log.registrar("Deletou o cliente.");
-                    MessageBox.Show("DELETE SUCESSO");
                     clientesBindingSource.DataSource = clientesDAO.getAllClientes();
                     dataGridViewCLientes.DataSource = clientesBindingSource;
                     configuraColunas();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro, contacte o suporte", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

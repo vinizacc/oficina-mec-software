@@ -1,4 +1,5 @@
 ﻿using Braga;
+using iText.StyledXmlParser.Jsoup.Helper;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -38,13 +39,12 @@ namespace Servico1
 
         private void txtUsuario_MouseDown(object sender, MouseEventArgs e)
         {
-            label4.Text = "";
+            
         }
 
         public class validacao
         {
             public bool validarLogin { get; set; }
-
             public Usuarios usuario { get; set; }
         }
 
@@ -53,12 +53,11 @@ namespace Servico1
             log.registrar("O botão login foi clicado.");
             UsuariosDAO usuariosDAO = new UsuariosDAO();
             validacao v = new validacao();
-            
-            v = usuariosDAO.validarLogin(txtUsuario.Text, txtSenha.Text);
 
+            //Valida se usuário existe
+            v = usuariosDAO.validarLogin(txtUsuario.Text, txtSenha.Text);
             if (v.validarLogin)
             {
-                
                 this.Hide();
                 var servico = new Servico();
                 servico.usuario = v.usuario;
@@ -116,12 +115,21 @@ namespace Servico1
 
         private void txtSenha_KeyUp(object sender, KeyEventArgs e)
         {
+            fecharLogin(sender, e);
+        }
+
+        private void txtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            fecharLogin(sender, e);
+        }
+
+        private void fecharLogin(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.Enter)
             {
                 btnRegistrar_Click(sender, e);
             }
         }
-
         private void txtConf_MouseDown(object sender, MouseEventArgs e)
         {
 
@@ -162,5 +170,6 @@ namespace Servico1
             label4.Text = "";
         }
 
+        
     }
 }

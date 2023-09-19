@@ -252,5 +252,10 @@ namespace Servico1
         {
             
         }
+
+        private void groupBoxUsuario_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

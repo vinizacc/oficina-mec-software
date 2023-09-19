@@ -1,10 +1,12 @@
 ﻿using Braga;
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Windows.Forms;
 using DataTable = System.Data.DataTable;
 
 namespace Servico1
@@ -21,7 +23,7 @@ namespace Servico1
 
             connection.Open();
             // puxar o num_nota
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.PAGO = 0 ORDER BY pessoa_fisica.NOME ASC, ordem_servico.DATA DESC";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null) ORDER BY pessoa_fisica.NOME ASC, ordem_servico.DATA DESC";
 
             MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -63,7 +65,6 @@ namespace Servico1
 
             return retornar;
         }
-
         public List<JObject> getAllServicos()
         {
             List<JObject> retornar = new List<JObject>();
@@ -72,8 +73,7 @@ namespace Servico1
 
             connection.Open();
             // puxar o num_nota
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE ORDER BY pessoa_fisica.NOME ASC, ordem_servico.DATA DESC";
-
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE EXCLUIDO != 1 OR EXCLUIDO is null ORDER BY pessoa_fisica.NOME ASC, ordem_servico.DATA DESC";
             MySqlCommand command = new MySqlCommand(query, connection);
 
             using (MySqlDataReader reader = command.ExecuteReader())
@@ -114,8 +114,140 @@ namespace Servico1
 
             return retornar;
         }
+        public List<JObject> getServicosByIdNaoAtivos(int id)
+        {
+            try
+            {
+                List<JObject> lista = new List<JObject>();
 
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
 
+                MySqlCommand command = new MySqlCommand();
+
+                command.CommandText = "SELECT pessoa_fisica.NOME, ordem_servico.VALOR_PAGO, " +
+                                       "ordem_servico.VALOR_TOTAL, ordem_servico.NUM_NOTA, " +
+                                       "ordem_servico.DATA, " +
+                                       "ordem_servico.ID_N_SERVICO " +
+                                       "FROM ordem_servico " +
+                                       "INNER JOIN pessoa_fisica " +
+                                       "ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE " +
+                                       "WHERE ID_CLIENTE = @searchTerm AND EXCLUIDO = 1";
+                command.Parameters.AddWithValue("@searchTerm", id);
+                command.Connection = connection;
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        JObject novaLinha = new JObject();
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            if (reader.GetName(i).ToString() == "EXCLUIDO")
+                            {
+                                string verificador = reader.GetValue(i).ToString();
+                                if (verificador == "True")
+                                {
+                                    novaLinha.Add(reader.GetName(i).ToString(), "Sim");
+                                }
+                                else
+                                {
+                                    novaLinha.Add(reader.GetName(i).ToString(), "Não");
+                                }
+                            }
+                            else
+                            {
+                                novaLinha.Add(reader.GetName(i).ToString(), reader.GetValue(i).ToString());
+
+                            }
+                        }
+
+                        lista.Add(novaLinha);
+                    }
+                }
+
+                connection.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("O cliente não tem notas para busca.");
+            }
+            List<JObject> listaVazia = new List<JObject>();
+            return listaVazia;
+        }
+        public List<JObject> getServicosByIdAtivos(int id)
+        {
+            try
+            {
+                List<JObject> lista = new List<JObject>();
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand();
+
+                command.CommandText = "SELECT pessoa_fisica.NOME, ordem_servico.VALOR_PAGO, " +
+                                       "ordem_servico.VALOR_TOTAL, ordem_servico.NUM_NOTA, " +
+                                       "ordem_servico.DATA, " +
+                                       "ordem_servico.ID_N_SERVICO " +
+                                       "FROM ordem_servico " +
+                                       "INNER JOIN pessoa_fisica " +
+                                       "ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE " +
+                                       "WHERE ID_CLIENTE = @searchTerm AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
+                command.Parameters.AddWithValue("@searchTerm", id);
+                command.Connection = connection;
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        JObject novaLinha = new JObject();
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            novaLinha.Add(reader.GetName(i).ToString(), reader.GetValue(i).ToString());
+                        }
+
+                        lista.Add(novaLinha);
+                    }
+                }
+
+                connection.Close();
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("O cliente não tem notas para busca.");
+            }
+            List<JObject> listaVazia = new List<JObject>();
+            return listaVazia;
+        }
+        public bool reativarNota(string id) 
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = "UPDATE ordem_servico SET EXCLUIDO = 0 WHERE ID_N_SERVICO = @searchTerm";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@searchTerm", id);
+            int resultCommand = command.ExecuteNonQuery();
+            
+            if ( resultCommand != 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            connection.Close();
+            
+            return false;
+        }
         public List<JObject> getServicoByNameNaoPago(string name)
         {
             List<JObject> retornar = new List<JObject>();
@@ -126,7 +258,7 @@ namespace Servico1
 
             string searchterm = name + "%";
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchterm AND ordem_servico.PAGO = 0";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchterm AND ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchterm", searchterm);
@@ -179,7 +311,7 @@ namespace Servico1
 
             string searchterm = name + "%";
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchterm";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchterm AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchterm", searchterm);
@@ -244,7 +376,7 @@ namespace Servico1
                 dataF += "," + listaDatas[1].Month.ToString();
                 dataF += "," + listaDatas[1].Year.ToString();
 
-                command.CommandText = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE DATE(ordem_servico.DATA) BETWEEN STR_TO_DATE(@datainicial,'%d,%m,%Y') and STR_TO_DATE(@datafinal,'%d,%m,%Y') AND ordem_servico.PAGO = 0 ORDER BY ordem_servico.DATA DESC";
+                command.CommandText = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE DATE(ordem_servico.DATA) BETWEEN STR_TO_DATE(@datainicial,'%d,%m,%Y') and STR_TO_DATE(@datafinal,'%d,%m,%Y') AND ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null) ORDER BY ordem_servico.DATA DESC";
                 command.Parameters.AddWithValue("@datainicial", dataI);
                 command.Parameters.AddWithValue("@datafinal", dataF);
 
@@ -373,7 +505,7 @@ namespace Servico1
                                         "ordem_servico.VALOR_TOTAL, ordem_servico.DATA, " +
                                         "ordem_servico.NUM_NOTA " +
                                 "FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE " +
-                                "WHERE DATE (ordem_servico.DATA)=@dataAtual AND ordem_servico.PAGO = 0 " +
+                                "WHERE DATE (ordem_servico.DATA)=@dataAtual AND ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null)" +
                                 "ORDER BY ordem_servico.DATA DESC";
 
             command.Parameters.AddWithValue("@dataAtual", dataAtual);
@@ -605,19 +737,19 @@ namespace Servico1
 
             if (intTipoPag == -1 && intStatus == -1) //Nada varia 
             {
-                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') order by pessoa_fisica.NOME ASC";
+                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND (EXCLUIDO != 1 OR EXCLUIDO is null) order by pessoa_fisica.NOME ASC";
             }
             else if (intTipoPag == -1) //  Status varia
             {
-                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.PAGO = @intStatus order by pessoa_fisica.NOME ASC";
+                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.PAGO = @intStatus AND (EXCLUIDO != 1 OR EXCLUIDO is null) order by pessoa_fisica.NOME ASC";
             }
             else if (intStatus == -1) // Tipo pag varia 
             {
-                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.TIPO_PAG = @intTipoPag order by pessoa_fisica.NOME ASC";
+                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.TIPO_PAG = @intTipoPag AND (EXCLUIDO != 1 OR EXCLUIDO is null) order by pessoa_fisica.NOME ASC";
             }
             else //Os dois variam 
             {
-                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.TIPO_PAG = @intTipoPag AND ordem_servico.PAGO = @intStatus order by pessoa_fisica.NOME ASC";
+                textoComando = "SELECT ordem_servico.DATA, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.TIPO_PAG, ordem_servico.PAGO, pessoa_fisica.NOME FROM ordem_servico INNER JOIN pessoa_fisica ON ordem_servico.ID_CLIENTE = pessoa_fisica.ID_PF WHERE ordem_servico.DATA BETWEEN STR_TO_DATE(@dataInicial, '%Y-%m-%d') and STR_TO_DATE(@dataFinal,'%Y-%m-%d') AND ordem_servico.TIPO_PAG = @intTipoPag AND ordem_servico.PAGO = @intStatus AND (EXCLUIDO != 1 OR EXCLUIDO is null) order by pessoa_fisica.NOME ASC";
             }
 
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -652,8 +784,7 @@ namespace Servico1
 
             connection.Open();
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA  FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.TIPO_PAG = @searchterm AND ordem_servico.PAGO = 0";
-
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA  FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.TIPO_PAG = @searchterm AND ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchterm", selectedIndex);
 
@@ -706,7 +837,7 @@ namespace Servico1
 
             connection.Open();
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA  FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.TIPO_PAG = @searchterm";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA  FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE ordem_servico.TIPO_PAG = @searchterm AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchterm", selectedIndex);
@@ -762,7 +893,7 @@ namespace Servico1
 
             name = name + "%";
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchName AND ordem_servico.TIPO_PAG = @searchIndex AND ordem_servico.PAGO = 0";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchName AND ordem_servico.TIPO_PAG = @searchIndex AND ordem_servico.PAGO = 0 AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchName", name);
@@ -818,7 +949,7 @@ namespace Servico1
 
             name = name + "%";
 
-            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchName AND ordem_servico.TIPO_PAG = @searchIndex";
+            string query = "SELECT ordem_servico.ID_N_SERVICO, pessoa_fisica.NOME, ordem_servico.TIPO_PAG, ordem_servico.VALOR_PAGO, ordem_servico.VALOR_TOTAL, ordem_servico.DATA, ordem_servico.NUM_NOTA FROM ordem_servico INNER JOIN pessoa_fisica ON pessoa_fisica.ID_PF = ordem_servico.ID_CLIENTE WHERE pessoa_fisica.NOME LIKE @searchName AND ordem_servico.TIPO_PAG = @searchIndex AND (EXCLUIDO != 1 OR EXCLUIDO is null)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@searchName", name);
@@ -992,6 +1123,41 @@ namespace Servico1
 
             //SELECT NOME_ARQ FROM ordem_servico WHERE ID_N_SERVICO =
             //return "";
+        }
+
+        public void ocultaTodasNotasDoClientPeloId(int id)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = "SELECT ID_N_SERVICO FROM ordem_servico WHERE ID_CLIENTE = @searchterm";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@searchTerm", id);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        if (reader.GetName(i) == "ID_N_SERVICO")
+                        {
+                            ocultaNota(Convert.ToInt32(reader.GetValue(i).ToString()));
+                        }
+                    }
+                }
+            }
+            connection.Close();
+        }
+        public void ocultaNota(int id)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = "UPDATE ordem_servico SET EXCLUIDO = 1 WHERE ID_N_SERVICO = @searchTerm";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@searchTerm", id);
+            command.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }
