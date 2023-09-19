@@ -1,12 +1,6 @@
 ﻿using Braga;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using Color = System.Drawing.Color;
-using Control = System.Windows.Forms.Control;
 
 namespace Servico1
 {
@@ -56,12 +50,6 @@ namespace Servico1
         {
             MessageBox.Show(previousControlName + "\n" + atualControleName);
         }
-
-        private void pBoxRegistro_Click(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void pDVToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,7 +138,7 @@ namespace Servico1
                 FormAcessoVendas formAcesso = new FormAcessoVendas();
                 formAcesso.privilegioAtual = usuario.PRIVILEGIO;
                 formAcesso.caminhoENomeLog = caminhoENomeLog;
-                log.registrar("O botão Acesso vendas foi clicado. \r\n O formulário vai ser aberto.");
+                log.registrar("O botão ACESSO A VENDAS foi clicado.");
                 formAcesso.ShowDialog(this);
             }
         }
@@ -162,7 +150,7 @@ namespace Servico1
             {
                 FormNotas formNota = new FormNotas();
                 formNota.caminhoENomeLog = caminhoENomeLog;
-                log.registrar("O botão Notas vendas foi clicado. \r\n O formulário vai ser aberto.");
+                log.registrar("O botão CONTROLE DE NOTAS.");
                 formNota.ShowDialog(this);
             }
         }

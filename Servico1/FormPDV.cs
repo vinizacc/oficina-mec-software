@@ -422,10 +422,6 @@ namespace Servico1
                 pagou = 1;
             }
 
-            if (comboBoxTipo.SelectedIndex == -1 || comboBoxTipo.SelectedIndex == 0) { comboTipoPag = 0.ToString(); }
-            else if (comboBoxTipo.SelectedIndex == 1) { comboTipoPag = 1.ToString(); }
-            else { comboTipoPag = 2.ToString(); }
-
             ServicosDAO s = new ServicosDAO();
 
             c.adicionarNumeroNota(cliente[0].ID_PF);
@@ -433,6 +429,8 @@ namespace Servico1
             
             s.insertOrdemServico(cliente[0].ID_PF, listaDados, dataDoArquivo, valorPagoPeloCliente.ToString(), valorFinalParaDB.ToString(), numeroNota, comboTipoPag, pagou, filePathAndName);
             log.registrar("Finalizado.\r\nPerfil ordem de serviço: \r\n - ID Cliente: "+ cliente[0].ID_PF + "\r\n - Data serviço: "+ dataDoArquivo);
+            MessageBox.Show("Serviço finalizado.\nA tela será fechada.", "Importe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
 
@@ -599,19 +597,7 @@ namespace Servico1
 
         private void FormPDV_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (tentativaFinalizar)
-            {
-                try
-                {
-                    finalizacao();
-                }
-                catch (Exception ex)
-                {
-                    log.registrar("Erro na impressão: \r\n" + ex.Message);
-                    MessageBox.Show("Ocorreu um erro, comunique o suporte.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
+            
         }
 
         private void txtBoxValorPago_Leave(object sender, EventArgs e)
@@ -906,13 +892,20 @@ namespace Servico1
                 if (r == DialogResult.Yes)
                 {
                     log.registrar("Tentando finalizar.");
-                    tentativaFinalizar = true;
-                    //finalizacao();
+                    try
+                    {
+                        finalizacao();
+                    }
+                    catch (Exception ex)
+                    {
+                        log.registrar("Erro na finalizacao: \r\n" + ex.Message);
+                        MessageBox.Show("Ocorreu um erro, comunique o suporte.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
                     log.registrar("Cancelou a finalização.");
-                    tentativaFinalizar = false;
+                    
                 }
 
                 bandeiraParaBD = true;

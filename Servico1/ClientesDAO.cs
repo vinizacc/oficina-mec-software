@@ -425,69 +425,101 @@ namespace Servico1
 
             return clientes;
         }
+       
+        //public string updateCliente(string id, string nomeAtual, string docAtual, string nomeNovo, string end, string tel, string doc, string desc)
+        //{
+        //    string validacao = "";
+        //    bool podeAtualizar = false;
+
+        //    if (nomeAtual == nomeNovo && docAtual == doc)
+        //    {
+        //        //o nome NÃO mudou E o doc NÃO mudou
+        //        //ATUALIZA SEM VERIFICAR
+        //        podeAtualizar = true;
+        //    }
+        //    else if (nomeAtual != nomeNovo)
+        //    {
+        //        // o nome mudou
+        //        //ATUALIZA VERIFICANDO O NOME
+
+        //        //A FUNCAO RETORNA TRUE SE NÃO EXISTE REGISTRO DE NOME NO BANCO DE DADOS
+        //        if (procuraNomeParaValidar(nomeNovo)) { podeAtualizar = true; }
+        //    }
+        //    else if (docAtual != doc)
+        //    {
+        //        //o doc mudou
+        //        //ATUALIZA VERIFICANDO O DOC
+        //        if (procuraDocParaValidar(doc)) { podeAtualizar = true; }
+        //    }
+        //    else
+        //    {
+        //        //os dois mudaram
+        //        //ATUALIZA VERIFICANDO OS DOIS
+        //        if (procuraNomeParaValidar(nomeNovo) && procuraDocParaValidar(doc)) { podeAtualizar = true; }
+        //    }
+
+        //    if (podeAtualizar)
+        //    {
+
+        //        int queryRetorno = 0;
+
+        //        MySqlConnection connection = new MySqlConnection(connectionString);
+
+        //        connection.Open();
+
+        //        MySqlCommand command = new MySqlCommand();
+
+        //        command.CommandText = "UPDATE PESSOA_FISICA SET NOME = @nomeNovo, ENDERECO = @end, CELULAR = @tel, DOC_PESSOAL = @doc, DESCRICAO = @desc WHERE ID_PF = @id;";
+        //        command.Parameters.AddWithValue("@id", id);
+        //        command.Parameters.AddWithValue("@nomeNovo", nomeNovo);
+        //        command.Parameters.AddWithValue("@end", end);
+        //        command.Parameters.AddWithValue("@tel", tel);
+        //        command.Parameters.AddWithValue("@doc", doc);
+        //        command.Parameters.AddWithValue("@desc", desc);
+        //        command.Connection = connection;
+        //        queryRetorno = command.ExecuteNonQuery();
+        //        connection.Close();
+
+        //        if (queryRetorno == 0 || queryRetorno == -1)
+        //        {
+        //            MessageBox.Show("UPDATE FALHO no query");
+        //        }
+        //    }
+
+        //    if (!podeAtualizar) { validacao = "Atualização falhou"; }
+        //    else { validacao = "Atualização deu certo"; }
+        //    return validacao;
+        //}
+
         public string updateCliente(string id, string nomeAtual, string docAtual, string nomeNovo, string end, string tel, string doc, string desc)
         {
             string validacao = "";
-            bool podeAtualizar = false;
 
-            if (nomeAtual == nomeNovo && docAtual == doc)
-            {
-                //o nome NÃO mudou E o doc NÃO mudou
-                //ATUALIZA SEM VERIFICAR
-                podeAtualizar = true;
-            }
-            else if (nomeAtual != nomeNovo)
-            {
-                // o nome mudou
-                //ATUALIZA VERIFICANDO O NOME
+            int queryRetorno = 0;
 
-                //A FUNCAO RETORNA TRUE SE NÃO EXISTE REGISTRO DE NOME NO BANCO DE DADOS
-                if (procuraNomeParaValidar(nomeNovo)) { podeAtualizar = true; }
-            }
-            else if (docAtual != doc)
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand();
+
+            command.CommandText = "UPDATE PESSOA_FISICA SET NOME = @nomeNovo, ENDERECO = @end, CELULAR = @tel, DOC_PESSOAL = @doc, DESCRICAO = @desc WHERE ID_PF = @id;";
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@nomeNovo", nomeNovo);
+            command.Parameters.AddWithValue("@end", end);
+            command.Parameters.AddWithValue("@tel", tel);
+            command.Parameters.AddWithValue("@doc", doc);
+            command.Parameters.AddWithValue("@desc", desc);
+            command.Connection = connection;
+            queryRetorno = command.ExecuteNonQuery();
+            connection.Close();
+
+            if (queryRetorno == 0 || queryRetorno == -1)
             {
-                //o doc mudou
-                //ATUALIZA VERIFICANDO O DOC
-                if (procuraDocParaValidar(doc)) { podeAtualizar = true; }
-            }
-            else
-            {
-                //os dois mudaram
-                //ATUALIZA VERIFICANDO OS DOIS
-                if (procuraNomeParaValidar(nomeNovo) && procuraDocParaValidar(doc)) { podeAtualizar = true; }
+                MessageBox.Show("UPDATE FALHO no query");
             }
 
-            if (podeAtualizar)
-            {
-
-                int queryRetorno = 0;
-
-                MySqlConnection connection = new MySqlConnection(connectionString);
-
-                connection.Open();
-
-                MySqlCommand command = new MySqlCommand();
-
-                command.CommandText = "UPDATE PESSOA_FISICA SET NOME = @nomeNovo, ENDERECO = @end, CELULAR = @tel, DOC_PESSOAL = @doc, DESCRICAO = @desc WHERE ID_PF = @id;";
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@nomeNovo", nomeNovo);
-                command.Parameters.AddWithValue("@end", end);
-                command.Parameters.AddWithValue("@tel", tel);
-                command.Parameters.AddWithValue("@doc", doc);
-                command.Parameters.AddWithValue("@desc", desc);
-                command.Connection = connection;
-                queryRetorno = command.ExecuteNonQuery();
-                connection.Close();
-
-                if (queryRetorno == 0 || queryRetorno == -1)
-                {
-                    MessageBox.Show("UPDATE FALHO no query");
-                }
-            }
-
-            if (!podeAtualizar) { validacao = "Atualização falhou"; }
-            else { validacao = "Atualização deu certo"; }
-            return validacao;
+            return validacao = "Atualização deu certo";
         }
 
         private bool validaApenasNumeros(string num)
