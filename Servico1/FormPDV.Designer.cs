@@ -78,7 +78,7 @@
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.txtBoxDesc = new System.Windows.Forms.TextBox();
+            this.txtBoxDesc = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -679,14 +679,11 @@
             // 
             // txtBoxDesc
             // 
-            this.txtBoxDesc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtBoxDesc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtBoxDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDesc.Location = new System.Drawing.Point(28, 181);
-            this.txtBoxDesc.Margin = new System.Windows.Forms.Padding(5);
             this.txtBoxDesc.Name = "txtBoxDesc";
-            this.txtBoxDesc.Size = new System.Drawing.Size(238, 34);
-            this.txtBoxDesc.TabIndex = 39;
+            this.txtBoxDesc.Size = new System.Drawing.Size(272, 67);
+            this.txtBoxDesc.TabIndex = 40;
+            this.txtBoxDesc.Text = "";
             // 
             // FormPDV
             // 
@@ -789,6 +786,6 @@
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.TextBox txtBoxItem;
         private System.Windows.Forms.GroupBox groupBoxCliente;
-        private System.Windows.Forms.TextBox txtBoxDesc;
+        private System.Windows.Forms.RichTextBox txtBoxDesc;
     }
 }
