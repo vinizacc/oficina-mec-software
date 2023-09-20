@@ -1,0 +1,135 @@
+Log do arquivo - 20-09-2023 17-26-55
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 20-09-2023 17-26-55
+O botão login foi clicado.
+O login foi invalidado.
+TENTATIVA DE LOGIN.
+LOGIN: [|| SENHA: 
+Campo login ou senha estão vazios.
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-20 17:27:32
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-20 17:28:18
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-20 17:29:01
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-20 17:29:56
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Finalizado.
+Perfil ordem de serviço: 
+ - ID Cliente: 9
+ - Data serviço: 2023-09-20 17:30:32
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Botao SALVAR foi clicado.
+Campos item e valor vazios.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
+Erro na finalizacao: 
+CONSTRAINT `ordem_servico.LISTA_DADOS` failed for `mydb`.`ordem_servico`

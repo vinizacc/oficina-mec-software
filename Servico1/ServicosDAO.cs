@@ -1080,7 +1080,7 @@ namespace Servico1
             connection.Open();
 
             string query = "INSERT INTO ORDEM_SERVICO(ID_CLIENTE, LISTA_DADOS, DATA, VALOR_PAGO, VALOR_TOTAL, NUM_NOTA, TIPO_PAG, PAGO, NOME_ARQ) " +
-                                            "VALUES (@id, CONVERT(@lista using utf8mb4), @dt, @valorPago, @valorTotal, @numeroNota, @tipoPag, @pagou, @fileNameAndPath)";
+                                            "VALUES (@id, @lista, @dt, @valorPago, @valorTotal, @numeroNota, @tipoPag, @pagou, @fileNameAndPath)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
 

@@ -52,7 +52,6 @@
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.numeric = new System.Windows.Forms.NumericUpDown();
             this.groupBoxItem = new System.Windows.Forms.GroupBox();
-            this.txtBoxDesc = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtBoxValor = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,6 +78,7 @@
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.txtBoxDesc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -379,15 +379,6 @@
             this.groupBoxItem.TabStop = false;
             this.groupBoxItem.Text = "Adiciona item";
             // 
-            // txtBoxDesc
-            // 
-            this.txtBoxDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDesc.Location = new System.Drawing.Point(29, 180);
-            this.txtBoxDesc.Name = "txtBoxDesc";
-            this.txtBoxDesc.Size = new System.Drawing.Size(299, 102);
-            this.txtBoxDesc.TabIndex = 7;
-            this.txtBoxDesc.Text = "";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -686,6 +677,17 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // txtBoxDesc
+            // 
+            this.txtBoxDesc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxDesc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBoxDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDesc.Location = new System.Drawing.Point(28, 181);
+            this.txtBoxDesc.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.Size = new System.Drawing.Size(238, 34);
+            this.txtBoxDesc.TabIndex = 39;
+            // 
             // FormPDV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -775,7 +777,6 @@
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.NumericUpDown numeric;
         private System.Windows.Forms.GroupBox groupBoxItem;
-        private System.Windows.Forms.RichTextBox txtBoxDesc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtBoxValor;
         private System.Windows.Forms.Label label8;
@@ -788,5 +789,6 @@
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.TextBox txtBoxItem;
         private System.Windows.Forms.GroupBox groupBoxCliente;
+        private System.Windows.Forms.TextBox txtBoxDesc;
     }
 }

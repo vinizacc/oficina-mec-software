@@ -1,0 +1,31 @@
+Log do arquivo - 20-09-2023 17-36-55
+
+----------------------------------
+
+
+O PROGRAMA FOI ABERTO
+NOME DO ARQUIVO: 20-09-2023 17-36-55
+O botão login foi clicado.
+O login foi validado.
+LOGIN: || SENHA: 
+
+----------------------------------
+O formulário Index foi aberto
+----------------------------------
+
+Campo login ou senha estão vazios.
+Botão PDV clicado.
+
+----------------------------------
+O formulário PDV foi aberto
+----------------------------------
+
+Iniciando PDF.
+Começando o registro.
+Carregando dados no visualizador de PDF. (Pela função de registro)
+Não fez o registro. Puxou do banco de dados o perfil. CLIENTE: Terry
+Botao SALVAR foi clicado.
+Carregando dados no visualizador de PDF. (Pelo picBoxSalvar_Click)
+Atualizou o pdf.
+Botão FINALIZAR clicado.
+Tentando finalizar.
