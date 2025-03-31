@@ -7,5 +7,3 @@ Tecnologias usadas:
   - XAMPP
 
 O foco do projeto foi lidar com o caixa, quem poderia acessar o caixa e a emissão de notas fiscais.
-
-Obrigado se chegou aqui! 
